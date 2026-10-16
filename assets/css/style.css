@@ -970,6 +970,11 @@ a.card:hover .card__title {
   background-size: 100% 1px;
 }
 
+.footer--compact {
+  padding-top: 0;
+  border-top: 0;
+}
+
 .legal {
   display: flex;
   justify-content: space-between;
@@ -1004,7 +1009,7 @@ a.card:hover .card__title {
   border-bottom: 1px solid var(--ink);
 }
 
-.back-link {
+.case-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1014,18 +1019,25 @@ a.card:hover .card__title {
   transition: color 0.3s ease;
 }
 
-.back-link svg {
+.case-link svg {
   width: 9px;
   height: 14px;
-  transform: scaleX(-1);
   transition: transform 0.45s var(--ease);
 }
 
-.back-link:hover {
+.case-link:hover {
   color: var(--blue);
 }
 
-.back-link:hover svg {
+.case-link:hover svg {
+  transform: translateX(5px);
+}
+
+.case-link--back svg {
+  transform: scaleX(-1);
+}
+
+.case-link--back:hover svg {
   transform: scaleX(-1) translateX(5px);
 }
 
@@ -1035,25 +1047,6 @@ a.card:hover .card__title {
   font-size: clamp(40px, 5.2vw, 72px);
   line-height: 1.05;
   letter-spacing: -0.03em;
-}
-
-.case-meta {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  width: 100%;
-  border-top: 2px solid var(--ink);
-}
-
-.case-meta > div {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 20px 24px 0 0;
-}
-
-.case-meta p:last-child {
-  font-size: 15px;
-  line-height: 1.5;
 }
 
 .case-soon {
@@ -1309,8 +1302,7 @@ a.card:hover .card__title {
 
   .stats,
   .steps,
-  .awards,
-  .case-meta {
+  .awards {
     grid-template-columns: minmax(0, 1fr);
   }
 
