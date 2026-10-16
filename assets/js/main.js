@@ -9,6 +9,23 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  // Logo: spin counter-clockwise ("back") before heading home
+  var logo = document.querySelector('.logo');
+  if (logo) {
+    logo.addEventListener('click', function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+      e.preventDefault();
+      var home = logo.href;
+      var onHome = location.pathname.replace(/index\.html$/, '') === new URL(home).pathname;
+      if (onHome) {
+        window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+        return;
+      }
+      logo.classList.add('is-leaving');
+      setTimeout(function () { location.href = home; }, reduce ? 0 : 420);
+    });
+  }
+
   // Fig. 1 keeps its Figma proportions: scale the whole diagram to fit
   var flow = document.querySelector('.flow');
   function fitFlow() {

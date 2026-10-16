@@ -150,10 +150,12 @@ img {
   transition: background-color 0.35s var(--ease), color 0.35s var(--ease), transform 0.5s var(--ease);
 }
 
-.logo:hover .logo__mark {
+.logo:hover .logo__mark,
+.logo:focus-visible .logo__mark,
+.logo.is-leaving .logo__mark {
   background: var(--blue);
   color: var(--white);
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 
 .logo__text {
@@ -330,7 +332,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  height: 120px;
+  min-height: 120px;
   padding: 22px 24px;
   background: var(--ink);
 }
@@ -343,6 +345,22 @@ img {
   font-weight: 500;
   font-size: 24px;
   color: var(--white);
+}
+
+.profile__email {
+  align-self: flex-start;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #ffffff;
+  background-image: linear-gradient(#ffffff, #ffffff);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s var(--ease);
+}
+
+.profile__email:hover {
+  background-size: 100% 1px;
 }
 
 .profile__row {
