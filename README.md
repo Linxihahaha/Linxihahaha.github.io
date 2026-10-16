@@ -1,40 +1,21 @@
 # Linxi Li — Portfolio
 
-Static site (plain HTML/CSS/JS, no build step), built from the Figma file
-"Portfolio – Web Homepage" (frame `LinxiWebsite-MainPage`).
+**Complex systems, untangled.**
 
-```
-index.html            Home page
-work/*.html           Case-study sub pages (placeholders for now)
-assets/css/style.css  All styles (colors/fonts as CSS variables at the top)
-assets/js/main.js     Scroll reveals, diagram scaling, nav highlight
-assets/img/           Images and SVGs exported from Figma
-```
+I’m Linxi, a UX designer specializing in complex B2B & enterprise systems — supply chain, healthcare & MedTech, fintech and AI. 8+ years of UX & interaction design for clients including Apple, Philips, PayPal and Emergo by UL.
 
-## Preview locally
+👉 **Visit the site: [linxihahaha.github.io](https://linxihahaha.github.io/)**
 
-```bash
-python3 -m http.server 8123
-```
+📮 [Linxi_Li@outlook.com](mailto:Linxi_Li@outlook.com) · [LinkedIn](https://www.linkedin.com/in/lilinxi/)
 
-Then open http://localhost:8123
+---
 
-## Publish on GitHub Pages
+## Maintenance notes
 
-1. Create a new **public** repository on github.com.
-   - Name it `<your-username>.github.io` to get the address `https://<your-username>.github.io/`
-   - Or give it any name (e.g. `portfolio`) to get `https://<your-username>.github.io/portfolio/`
-2. Push this folder:
-   ```bash
-   git remote add origin https://github.com/<your-username>/<repo-name>.git
-   git push -u origin main
-   ```
-3. On GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch**,
-   pick `main` and `/ (root)`, then Save. The site is live in about a minute.
+A static site (plain HTML/CSS/JS, no build step), published with GitHub Pages from the `main` branch. Every push to `main` goes live in about a minute.
 
-Every later `git push` updates the live site automatically.
+- `index.html` — home page
+- `work/*.html` — project pages (case studies coming soon)
+- `assets/` — styles, scripts and images
 
-## Writing a case study
-
-Each project card links to a file in `work/`. Replace the "Being written — coming soon"
-block in that file with the real content.
+Preview locally with `python3 -m http.server 8123`, then open http://localhost:8123.
