@@ -977,6 +977,21 @@ a.card:hover .card__title {
    Sub pages (case study placeholders)
    -------------------------------------------------------------------------- */
 
+/* Sub pages fill the viewport: the gap above the footer absorbs extra height */
+.case-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.case-page > main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .case-hero {
   display: flex;
   flex-direction: column;
@@ -1041,8 +1056,8 @@ a.card:hover .card__title {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  flex: 1;
   gap: 48px;
-  min-height: 520px;
   padding: 48px 0 88px;
 }
 
@@ -1307,6 +1322,16 @@ a.card:hover .card__title {
 
   .card__media {
     height: 180px;
+  }
+
+  .case-hero {
+    gap: 32px;
+    padding: 48px 0 32px;
+  }
+
+  .case-soon {
+    gap: 32px;
+    padding: 32px 0 48px;
   }
 
   .legal {
