@@ -875,23 +875,6 @@ a.card:hover .card__title {
   padding: 20px 24px 20px 0;
 }
 
-.award::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 24px;
-  bottom: -1px;
-  height: 1px;
-  background: var(--ink);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.6s var(--ease);
-}
-
-.award:hover::after {
-  transform: scaleX(1);
-}
-
 .award__title {
   font-weight: 500;
   font-size: 15px;
