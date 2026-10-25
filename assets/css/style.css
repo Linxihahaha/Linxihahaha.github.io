@@ -981,9 +981,14 @@ a.card:hover .card__title {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 28px;
-  padding: 88px 0 72px;
-  border-bottom: 1px solid var(--ink);
+  gap: 48px;
+  padding: 88px 0 48px;
+}
+
+.case-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .case-link {
@@ -992,7 +997,7 @@ a.card:hover .card__title {
   gap: 8px;
   font-family: var(--mono);
   font-size: 13px;
-  color: var(--muted);
+  color: var(--label);
   transition: color 0.3s ease;
 }
 
@@ -1018,44 +1023,39 @@ a.card:hover .card__title {
   transform: scaleX(-1) translateX(5px);
 }
 
+.case-link--next {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 15px;
+}
+
 .case-title {
   max-width: 1000px;
   font-weight: 300;
-  font-size: clamp(40px, 5.2vw, 72px);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-size: clamp(36px, 8vw, 48px);
+  line-height: normal;
+  letter-spacing: -0.01em;
 }
 
 .case-soon {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 18px;
-  padding: 88px 0;
-}
-
-.case-soon__box {
-  width: 100%;
-  padding: 48px;
-  border: 1px dashed var(--dash);
-  background: var(--white);
-}
-
-.case-soon__box p + p {
-  margin-top: 12px;
+  gap: 48px;
+  min-height: 520px;
+  padding: 48px 0 88px;
 }
 
 .case-soon__title {
   font-weight: 500;
-  font-size: 28px;
-  letter-spacing: -0.015em;
+  font-size: 26px;
 }
 
 .case-soon__text {
   max-width: 640px;
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--ink-2);
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 /* --------------------------------------------------------------------------
@@ -1307,10 +1307,6 @@ a.card:hover .card__title {
 
   .card__media {
     height: 180px;
-  }
-
-  .case-soon__box {
-    padding: 28px 20px;
   }
 
   .legal {
