@@ -80,7 +80,7 @@ const versions = [
     file: 'LinxiLi-Resume', label: 'General',
     headline: 'Senior UX Designer  ·  Complex Systems for Enterprise & Healthcare',
     summary: "Senior UX designer with 8+ years turning complex systems into clear, usable products — from medical informatics in 10+ hospitals at Philips to Apple's 0→1 production-ramp platform and PayPal's risk & control portal.",
-    domain: ['Domain', 'Healthcare informatics · supply chain & manufacturing (Certificate) · fintech compliance · consumer IoT'],
+    domain: ['Domain', 'Healthcare informatics · supply chain & manufacturing (certified) · fintech compliance · consumer IoT'],
   },
   {
     file: 'LinxiLi-Resume-Healthcare-MedTech', label: 'Healthcare & MedTech',
