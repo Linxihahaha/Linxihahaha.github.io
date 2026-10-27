@@ -202,9 +202,11 @@ function render(v) {
 
 mkdirSync(outDir, { recursive: true });
 mkdirSync(tmpDir, { recursive: true });
+mkdirSync(join(root, '_resume', 'pdf'), { recursive: true });
 for (const v of versions) {
   const html = join(tmpDir, `${v.file}.html`);
-  const pdf = join(outDir, `${v.file}.pdf`);
+  // only the general version is published on the site; focus versions stay local in _resume/pdf
+  const pdf = join(v.file === 'LinxiLi-Resume' ? outDir : join(root, '_resume', 'pdf'), `${v.file}.pdf`);
   writeFileSync(html, render(v));
   execFileSync(CHROME, ['--headless=new', '--disable-gpu', '--no-pdf-header-footer', '--virtual-time-budget=15000',
     `--print-to-pdf=${pdf}`, `file://${html}`], { stdio: 'ignore' });
