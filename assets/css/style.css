@@ -1176,6 +1176,24 @@ a.card:hover .card__title {
   }
 }
 
+/* logo and the four nav links need ~1160px side by side; stack them below that */
+@media (max-width: 1180px) {
+  .site-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 14px 0 6px;
+  }
+
+  .site-header.is-scrolled .site-header__inner {
+    padding: 10px 0 2px;
+  }
+
+  .nav {
+    margin-left: -14px;
+  }
+}
+
 @media (max-width: 960px) {
   .flow {
     flex-direction: column;
