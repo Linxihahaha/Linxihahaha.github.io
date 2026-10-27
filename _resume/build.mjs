@@ -31,7 +31,7 @@ const shared = {
         'Led the **0→1 UX architecture** of a production-ramp monitoring platform for Apple product launches, replacing Excel trackers, email threads and **100+ page weekly reports** with one shared real-time view.',
         'Designed the callout-first summary dashboard and key-metric visualizations so leaders spot cross-product risks at a glance; reporting moved from **weekly snapshots to minute-level updates**.',
         'Unified **18 modules** under one design language (solo, then with a second designer) and aligned **11+ stakeholders** across product, business and engineering; **Wave 1 launched** and set the structure for Wave 2.',
-        'Designed v2.0 features for an OEM production-line build-up data platform, improving readability and workflow efficiency for multi-role, high-frequency tasks across input/output, capacity, delivery and shipping.',
+        'Beyond the ramp platform, designed **three more tools**: a v2.0 redesign of the OEM production-line build-up data platform, and two monitoring and comparison platforms for input/output, capacity, delivery planning and shipping.',
       ],
     },
     {
@@ -43,7 +43,7 @@ const shared = {
       ],
     },
     {
-      org: 'Philips', title: 'Senior UX Designer, Healthcare', dates: 'Nov 2017 – Jan 2023  ·  Shanghai',
+      org: 'Philips', title: 'Senior UX Designer, Healthcare', dates: 'Dec 2017 – Jan 2023  ·  Shanghai',
       note: 'Associate UX Designer (2017)  →  UX Designer (2019)  →  Senior UX Designer (2022)',
       bullets: [
         'Designed a radiology **equipment data-management system** deployed in **10+ hospitals**, replacing paper tracking boards, plus **3+ 0→1 clinical tools** for report management, ultrasound ROI drawing and maintenance scheduling.',
@@ -80,7 +80,7 @@ const versions = [
     file: 'LinxiLi-Resume', label: 'General',
     headline: 'Senior UX Designer  ·  Complex Systems for Enterprise & Healthcare',
     summary: "Senior UX designer with 8+ years turning complex systems into clear, usable products — from medical informatics in 10+ hospitals at Philips to Apple's 0→1 production-ramp platform and PayPal's risk & control portal.",
-    domain: ['Domain', 'Healthcare informatics · supply chain & manufacturing · fintech compliance · consumer IoT'],
+    domain: ['Domain', 'Healthcare informatics · supply chain & manufacturing (Supply Chain Professional Certificate) · fintech'],
   },
   {
     file: 'LinxiLi-Resume-Healthcare-MedTech', label: 'Healthcare & MedTech',
