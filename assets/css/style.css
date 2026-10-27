@@ -387,7 +387,7 @@ img {
   line-height: 1.45;
 }
 
-.profile__value--strong {
+.profile__value strong {
   font-weight: 600;
 }
 
@@ -1176,8 +1176,8 @@ a.card:hover .card__title {
   }
 }
 
-/* logo and the four nav links need ~1160px side by side; stack them below that */
-@media (max-width: 1180px) {
+/* logo and the four nav links need ~1040px side by side; stack them below that */
+@media (max-width: 1060px) {
   .site-header__inner {
     flex-direction: column;
     align-items: flex-start;
