@@ -703,15 +703,16 @@ img {
   min-height: 500px;
   background: var(--white);
   border: 1px solid var(--hairline);
-  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease);
+  transition: translate 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease);
 }
 
 .cards--stack .card {
   min-height: 0;
 }
 
+/* Lift with `translate`, not `transform`: the scroll reveal owns `transform` */
 a.card:hover {
-  transform: translateY(-4px);
+  translate: 0 -4px;
   border-color: rgba(0, 0, 0, 0.12);
   box-shadow: 0 16px 40px rgba(17, 21, 28, 0.08);
 }
@@ -1045,6 +1046,13 @@ a.card:hover .card__title {
 .js [data-reveal].is-visible {
   opacity: 1;
   transform: none;
+}
+
+/* Cards keep their hover transitions alongside the reveal, without its delay */
+.js .card[data-reveal] {
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease),
+    translate 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease);
+  transition-delay: var(--delay, 0s), var(--delay, 0s), 0s, 0s, 0s;
 }
 
 /* Hero entrance */
