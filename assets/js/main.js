@@ -71,6 +71,42 @@
     targets.forEach(function (el) { io.observe(el); });
   }
 
+  // "Coming soon" toast for case studies that aren't online yet
+  var toast = document.querySelector('.toast');
+  var toastHTML = toast ? toast.innerHTML : '';
+  var toastTimer;
+  // The live region starts empty: screen readers announce the message when it's inserted
+  if (toast) toast.innerHTML = '';
+  function hideToast() {
+    clearTimeout(toastTimer);
+    if (toast) toast.classList.remove('is-open');
+  }
+  function showToast() {
+    if (!toast) return;
+    clearTimeout(toastTimer);
+    if (!toast.classList.contains('is-open')) {
+      toast.innerHTML = toastHTML;
+      void toast.offsetWidth; // start the slide-in from the closed state
+      toast.classList.add('is-open');
+    }
+    toastTimer = setTimeout(hideToast, 2000);
+  }
+  document.querySelectorAll('[data-soon]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      showToast();
+    });
+    el.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      e.preventDefault();
+      showToast();
+    });
+  });
+  if (toast) toast.addEventListener('click', hideToast);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') hideToast();
+  });
+
   // Highlight the nav item for the section in view
   var links = document.querySelectorAll('.nav__link[href^="#"]');
   if (links.length && 'IntersectionObserver' in window) {
