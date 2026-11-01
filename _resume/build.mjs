@@ -1,4 +1,5 @@
-// Builds the downloadable resume PDFs in assets/resume/ from the content below.
+// Builds the English resume PDFs into _resume/pdf (local only) from the content below.
+// The site's assets/resume/LinxiLi-Resume.pdf is the bilingual EN/中文 PDF exported from Figma; this script never touches it.
 // Mirrors the Figma file "Linxi Li – Resume v2 (Recruiter Review)", frames "Resume v3 — …".
 // Run: node _resume/build.mjs   (needs Google Chrome; GitHub Pages ignores folders starting with "_")
 
@@ -8,7 +9,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const outDir = join(root, 'assets', 'resume');
+const outDir = join(root, '_resume', 'pdf');
 const tmpDir = join(root, '_resume', 'html');
 const CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
@@ -202,11 +203,9 @@ function render(v) {
 
 mkdirSync(outDir, { recursive: true });
 mkdirSync(tmpDir, { recursive: true });
-mkdirSync(join(root, '_resume', 'pdf'), { recursive: true });
 for (const v of versions) {
   const html = join(tmpDir, `${v.file}.html`);
-  // only the general version is published on the site; focus versions stay local in _resume/pdf
-  const pdf = join(v.file === 'LinxiLi-Resume' ? outDir : join(root, '_resume', 'pdf'), `${v.file}.pdf`);
+  const pdf = join(outDir, `${v.file}.pdf`);
   writeFileSync(html, render(v));
   execFileSync(CHROME, ['--headless=new', '--disable-gpu', '--no-pdf-header-footer', '--virtual-time-budget=15000',
     `--print-to-pdf=${pdf}`, `file://${html}`], { stdio: 'ignore' });
