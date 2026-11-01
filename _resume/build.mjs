@@ -1,5 +1,5 @@
 // Builds the English resume PDFs into _resume/pdf (local only) from the content below.
-// The site's assets/resume/LinxiLi-Resume.pdf is the bilingual EN/中文 PDF exported from Figma; this script never touches it.
+// The site's assets/resume/LinxiLi_李林溪_Resume_简历.pdf is the bilingual EN/中文 PDF exported from Figma; this script never touches it.
 // Mirrors the Figma file "Linxi Li – Resume v2 (Recruiter Review)", frames "Resume v3 — …".
 // Run: node _resume/build.mjs   (needs Google Chrome; GitHub Pages ignores folders starting with "_")
 
