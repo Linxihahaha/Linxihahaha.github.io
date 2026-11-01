@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /_og/
+Disallow: /_resume/
+
+Sitemap: https://hellolinxi.com/sitemap.xml
