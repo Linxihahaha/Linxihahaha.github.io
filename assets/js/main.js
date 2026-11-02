@@ -31,6 +31,8 @@
     link.addEventListener('click', function (e) {
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
       e.preventDefault();
+      // remember the choice so the browser-language redirect never overrides it
+      try { localStorage.setItem('lang', /^zh/i.test(link.getAttribute('hreflang')) ? 'zh' : 'en'); } catch (err) {}
       var toggle = link.classList.contains('lang-toggle') ? link : link.querySelector('.lang-toggle');
       if (toggle) toggle.classList.add('is-switching');
       setTimeout(function () { location.href = link.href; }, reduce ? 0 : 320);
