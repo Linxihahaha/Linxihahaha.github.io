@@ -651,7 +651,7 @@ img {
   padding: 8px 12px;
   background: var(--white);
   border: 1px dashed var(--chip-border);
-  font-size: 13px;
+  font-size: 12px;
   line-height: normal;
   white-space: nowrap;
   transition: border-color 0.3s ease, transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
@@ -735,7 +735,7 @@ img {
   right: 30px;
   padding: 12px 14px;
   border: 1px solid var(--blue-soft);
-  font-size: 13px;
+  font-size: 12px;
   line-height: normal;
   color: var(--white);
   transition: background-color 0.35s ease, border-color 0.35s ease;
@@ -812,6 +812,11 @@ img {
 
 .cards--stack .card {
   min-height: 0;
+}
+
+.cards:not(.cards--stack) .card__body,
+.cards:not(.cards--stack) .card__details {
+  gap: 20px;
 }
 
 /* Lift with `translate`, not `transform`: the scroll reveal owns `transform` */
@@ -910,10 +915,14 @@ a.card:hover .card__title {
   flex: 0 0 120px;
 }
 
+.card__detail .label {
+  line-height: 1.5;
+}
+
 .card__detail p:last-child {
   flex: 1 1 0;
   min-width: 0;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.5;
 }
 
@@ -958,7 +967,7 @@ a.card:hover .card__title {
 }
 
 .step__text {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.5;
   color: var(--ink-2);
 }
@@ -1016,7 +1025,7 @@ a.card:hover .card__title {
 .hero__actions {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 36px;
   flex-wrap: wrap;
 }
 
@@ -1342,18 +1351,13 @@ a.lang-toggle:hover > span:not(.is-on),
 
 /* "独立设计 → 双人" needs the Figma CN size to fit a quarter column */
 :lang(zh) .stat__value {
-  font-size: 36px;
+  font-size: 40px;
   line-height: 1.2;
   letter-spacing: -0.01em;
 }
 
 :lang(zh) .stat__note {
   line-height: 1.5;
-}
-
-:lang(zh) .card__detail p:last-child,
-:lang(zh) .step__text {
-  line-height: 1.6;
 }
 
 :lang(zh) .award__role {
