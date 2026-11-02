@@ -8,10 +8,13 @@
   <meta property="og:title" content="Linxi Li — Complex systems, untangled.">
   <meta property="og:description" content="Senior UX designer specializing in complex B2B & enterprise systems.">
   <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://hellolinxi.com/">
+  <link rel="alternate" hreflang="zh-CN" href="https://hellolinxi.com/zh/">
+  <link rel="alternate" hreflang="x-default" href="https://hellolinxi.com/">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -39,7 +42,14 @@
     <!-- Hero -->
     <section class="hero" aria-label="Introduction">
       <div class="hero__intro">
-        <p class="hero__eyebrow" data-reveal>PORTFOLIO 2026</p>
+        <div class="hero__top" data-reveal>
+          <p class="hero__eyebrow">PORTFOLIO 2026</p>
+          <a class="lang-switch" href="zh/" hreflang="zh-CN" data-lang-switch>
+            <span class="lang-switch__label">Switch Language</span>
+            <span class="lang-toggle" aria-hidden="true"><span class="is-on">A</span><span lang="zh-CN">中</span></span>
+            <span class="visually-hidden" lang="zh-CN">（切换到中文）</span>
+          </a>
+        </div>
         <h1 class="hero__title" data-reveal style="--delay:.08s">Complex systems, <strong>untangled</strong>.</h1>
         <p class="hero__lede" data-reveal style="--delay:.16s">I’m Linxi, a senior UX designer specializing in complex systems. I work where business, technology and human needs get tangled — turning messy problems in industry-benchmark supply chains, long-lifecycle medical systems and enterprise fintech into digital experiences that feel trustworthy and natural.</p>
         <div class="hero__actions" data-reveal style="--delay:.24s">
@@ -53,7 +63,10 @@
       <aside class="profile" data-reveal style="--delay:.2s">
         <div class="profile__head">
           <p class="label">Designer</p>
-          <p class="profile__name">Linxi Li</p>
+          <div class="profile__name-row">
+            <p class="profile__name">Linxi Li</p>
+            <span class="status-badge">Job Seeking...</span>
+          </div>
           <a class="profile__email" href="mailto:Linxi_Li@outlook.com">Linxi_Li@outlook.com</a>
         </div>
         <div class="profile__row">
@@ -212,7 +225,7 @@
               </div>
               <div class="card__detail">
                 <p class="label">The design</p>
-                <p>Designed the UI/UX of a visually aided associative support compliance strategy platform in collaboration with the engineering team.</p>
+                <p>Designed the UI/UX for the visually aided assistive support compliance strategy platform in collaboration with the engineering team.</p>
               </div>
             </div>
           </div>
@@ -325,11 +338,11 @@
             <span class="card__num">PROJECT 08 <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6" stroke="currentColor" stroke-width="1.4"/></svg></span>
           </div>
           <div class="card__body">
-            <h3 class="card__title">Consumer-Facing Apps and Mini-Programs</h3>
+            <h3 class="card__title">Consumer-facing Apps and Mini-Programs</h3>
             <div class="card__details">
               <div class="card__detail">
                 <p class="label">The design</p>
-                <p>Designed user interfaces for multiple consumer-facing applications based on user needs.</p>
+                <p>Designed user interfaces for multiple consumer-facing applications based on user needs. For example, the monitoring application for baby monitors, companion application for smart hair care brush and electric shaver.</p>
               </div>
             </div>
           </div>
@@ -341,7 +354,7 @@
     <section class="section section--ruled" id="approach" aria-labelledby="approach-title">
       <div class="section-header" data-reveal>
         <h2 class="section-title" id="approach-title">How I work</h2>
-        <p class="section-meta">Iterative design process — a metaphor from thread work</p>
+        <p class="section-meta">Iterative design process — A metaphor from thread work</p>
       </div>
 
       <div class="steps">
@@ -349,13 +362,13 @@
           <span class="step__marker"></span>
           <p class="step__num">STEP 01</p>
           <h3 class="step__title">Design with curiosity</h3>
-          <p class="step__text">I design with curiosity about the business. On Apple’s supply chain project, I earned a supply chain professional certification and sat with PMs to learn which data and steps matter.</p>
+          <p class="step__text">A certain degree of complexity enables digital systems to maintain stability and resilience; it is essential to understand the characteristics of the business before embarking on the design process. On Apple’s supply chain project, I earned a supply chain professional certification and sat with PMs to learn which data and steps matter.</p>
         </div>
         <div class="step" data-reveal style="--delay:.1s">
           <span class="step__marker"></span>
           <p class="step__num">STEP 02</p>
           <h3 class="step__title">Find the knot</h3>
-          <p class="step__text">Complex systems involve many owners. I separate what I decide from what needs confirming, and bring stakeholders in early. Using draft sketches, we define the problem and clarify the requirements together.</p>
+          <p class="step__text">Complex systems involve many owners. I separate what I decide from what needs confirming, and bring stakeholders in early. Using draft sketches, we clarify the requirements and find out the optimal solutions together.</p>
         </div>
         <div class="step" data-reveal style="--delay:.2s">
           <span class="step__marker"></span>
@@ -383,17 +396,17 @@
         <div class="award" data-reveal>
           <p class="award__title">Red Dot: Best of the Best &amp; iF</p>
           <p class="award__project">Philips NightOwl Baby Monitor</p>
-          <p class="award__role">Connected app UI/UX — live video stream and lullaby settings let parents check on their baby with ease</p>
+          <p class="award__role">UI/UX design for the companion app — parents can easily monitor their baby and soothe them to sleep via live video streaming and lullaby settings</p>
         </div>
         <div class="award" data-reveal style="--delay:.08s">
           <p class="award__title">Graphic User Interface Design Patent</p>
           <p class="award__project">Medical System Event Timeline Design</p>
-          <p class="award__role">Responsible for the UI/UX design — making a medical system’s complex event history scannable in a single view</p>
+          <p class="award__role">Responsible for the UI/UX design — ensuring that details from multiple medical event records are scannable in a single view</p>
         </div>
         <div class="award" data-reveal style="--delay:.16s">
           <p class="award__title">Dutch Design Week Exhibition</p>
           <p class="award__project"><a href="https://www.tudelft.nl/en/innovatie-impact/project-cases/excelscope" target="_blank" rel="noopener">Excelscope 2.0</a></p>
-          <p class="award__role">Affordable healthcare solution for malaria diagnosis in rural Uganda, informed by a two-week on-site research trip</p>
+          <p class="award__role">Affordable healthcare solution for malaria diagnosis in rural Uganda, based on a two-week on-site field study in Uganda</p>
         </div>
         <div class="award" data-reveal>
           <p class="award__title">Red Dot: Design Team of the Year 2022</p>
@@ -403,12 +416,12 @@
         <div class="award" data-reveal style="--delay:.08s">
           <p class="award__title">Red Dot &amp; iF</p>
           <p class="award__project">Philips Air Purifier Formaldehyde Fighter Series</p>
-          <p class="award__role">LED display UI/UX that makes the technical purification process easy to understand and control</p>
+          <p class="award__role">LED display UI/UX design that makes the air purification process easy for users to understand and control</p>
         </div>
         <div class="award" data-reveal style="--delay:.16s">
           <p class="award__title">Red Dot &amp; iF</p>
           <p class="award__project">Philips Health Rice Cooker Series</p>
-          <p class="award__role">LED and TFT display UI/UX, plus tangible interface design, for two rice cooker models</p>
+          <p class="award__role">LED and TFT display UI/UX design, plus interaction designs for the physical buttons on the product, for two rice cooker models</p>
         </div>
       </div>
     </section>
@@ -422,9 +435,9 @@
       </div>
       <div class="legal">
         <p>© 2026 LINXI&nbsp;&nbsp;.✦ ˖</p>
-        <p>SHANGHAI, CN</p>
-        <p class="legal__lang"><span>EN</span><span>/</span><span>CN</span></p>
+        <a class="lang-toggle" href="zh/" hreflang="zh-CN" data-lang-switch aria-label="切换到中文 (Switch to Chinese)" lang="zh-CN"><span class="is-on" lang="en">A</span><span>中</span></a>
         <a href="https://www.linkedin.com/in/lilinxi/" target="_blank" rel="noopener">LINKEDIN</a>
+        <p>SHANGHAI, CN</p>
       </div>
     </footer>
 
