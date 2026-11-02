@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hellolinxi.com/</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://hellolinxi.com/zh/</loc>
+    <lastmod>2026-11-02</lastmod>
   </url>
   <url>
     <loc>https://hellolinxi.com/assets/resume/LinxiLi_%E6%9D%8E%E6%9E%97%E6%BA%AA_Resume_%E7%AE%80%E5%8E%86.pdf</loc>
