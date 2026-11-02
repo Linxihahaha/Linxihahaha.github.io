@@ -16,7 +16,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script>document.documentElement.classList.add('js');</script>
+  <script>
+    document.documentElement.classList.add('js');
+    // First visit: open the language the browser asks for. A choice made with the A/中 toggle wins; crawlers stay put.
+    (function () {
+      try {
+        if (localStorage.getItem('lang') || /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)) return;
+        var want = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+        if (want.indexOf('zh') === 0) location.replace('zh/' + location.search + location.hash);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
