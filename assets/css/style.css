@@ -380,7 +380,7 @@ img {
   flex-shrink: 0;
 }
 
-/* "Job Seeking..." — a gradient stroke that drifts around the badge */
+/* "Open to Work" badge — a gradient stroke that drifts around the badge */
 @property --badge-angle {
   syntax: "<angle>";
   inherits: false;
