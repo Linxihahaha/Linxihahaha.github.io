@@ -955,6 +955,16 @@
   border-bottom: 0;
 }
 
+/* no full-width rules around 09: drop the line above (08's bottom rule)
+   and the one below (the footer's top rule) */
+.cs-section:has(+ #reflection) {
+  border-bottom: 0;
+}
+
+#reflection + .cs-footer {
+  border-top: 0;
+}
+
 .cs-flow {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
