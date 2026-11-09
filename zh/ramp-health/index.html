@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>提产数据管理系统 — 李林溪案例研究</title>
+  <meta name="description" content="面向苹果内部供应链新产品提产爬坡（Ramp）阶段的数据监控管理平台：把散落在邮件、Excel 和各部门系统中的十余个模块数据，整合为实时更新的 Ramp 状态数据面板。">
+  <meta property="og:title" content="提产数据管理系统 — 李林溪案例研究">
+  <meta property="og:description" content="把数据更新的频率从“周”压缩到“分钟”：复杂 B 端、数据密集型产品与 AI UX 案例。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:url" content="https://hellolinxi.com/zh/ramp-health/">
+  <meta property="og:site_name" content="李林溪 Linxi Li">
+  <meta property="og:image" content="https://hellolinxi.com/assets/img/ramp-health-banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://hellolinxi.com/zh/ramp-health/">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/case.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="cs">
+
+  <header class="site-header" id="top">
+    <div class="page">
+      <div class="site-header__inner">
+        <a class="logo" href="../" aria-label="李林溪 — 首页">
+          <span class="logo__mark">L</span>
+          <span class="logo__text">Linxi / 专注复杂系统设计</span>
+        </a>
+        <nav class="nav" aria-label="主导航">
+          <a class="nav__link is-active" href="../#featured" aria-current="page">[01] 重点项目</a>
+          <a class="nav__link" href="../#work">[02] 精选项目</a>
+          <a class="nav__link" href="../#approach">[03] 工作方式</a>
+          <a class="nav__link" href="../../assets/resume/LinxiLi_李林溪_Resume_简历.pdf" download="LinxiLi_李林溪_Resume_简历.pdf">[04] 简历</a>
+        </nav>
+      </div>
+    </div>
+    <div class="cs-progress" aria-hidden="true"><span></span></div>
+  </header>
+
+  <main class="page">
+
+    <!-- Hero -->
+    <section class="cs-hero" aria-labelledby="cs-title">
+      <p class="cs-hero__eyebrow" data-reveal>复杂 B2B · 企业级 UX · 数据密集型产品 · AI UX</p>
+      <h1 class="cs-hero__title" id="cs-title" data-reveal style="--delay:.06s">提产数据管理系统</h1>
+      <p class="cs-hero__note" data-reveal style="--delay:.12s">* 本案例重点展示设计过程与决策思路，不涉及保密细节。</p>
+      <div class="cs-hero__copy" data-reveal style="--delay:.18s">
+        <p>提产数据管理系统是一个面向苹果内部供应链新产品提产爬坡（Ramp）阶段的数据监控管理平台：它把原本散落在邮件、Excel、离线文档和各部门系统中的十余个模块数据，统一整合为实时更新、跨产品可视的整体 Ramp 状态数据面板 —— 让负责不同模块的运营经理实时协同与高效汇报，让管理层一眼看清预警和风险，把数据更新的频率从“周”压缩到“分钟”。</p>
+        <p>我作为 UI/UX 设计师，<strong>早期独立主导系统页面架构</strong>与总览首页设计，后期与另一位设计师并行合作完成所有模块的设计扩展，并配合开发落地。</p>
+      </div>
+      <dl class="cs-meta" data-reveal style="--delay:.24s">
+        <div><dt>我的角色</dt><dd>UI/UX 设计师</dd></div>
+        <div><dt>项目范围</dt><dd><span data-count="18">18</span> 个功能模块</dd></div>
+        <div><dt>利益相关者</dt><dd><span data-count="11">11</span> 名产品经理 · 管理层 · 开发团队</dd></div>
+        <div><dt>设计团队</dt><dd>2 位 UI/UX 设计师</dd></div>
+        <div><dt>项目周期</dt><dd>2025 年 11 月 — 持续迭代</dd></div>
+      </dl>
+    </section>
+
+    <!-- 01 Background -->
+    <section class="cs-section" id="background" aria-labelledby="s01">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s01">Ramp：节奏密集、高度不确定的供应链阶段</h2>
+        <p class="cs-meta-label">01 · 项目背景</p>
+      </div>
+      <p class="cs-lead" data-reveal>每款苹果新产品在正式发售前，需要经历 Ramp（量产爬坡）阶段 —— 新产品从小批量试产过渡到全面量产的窗口期，在此阶段产量与良率逐步提升，直至达到目标产能与预期的出货能力。</p>
+    </section>
+
+    <!-- 02 Risk -->
+    <section class="cs-section cs-section--risk" id="risk" aria-labelledby="s02">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s02">提产阶段的异常若未及时发现和处理 = 可能造成巨大代价</h2>
+        <p class="cs-meta-label">02 · 风险场景举例</p>
+      </div>
+      <p class="cs-lead" data-reveal>当异常未能被及时发现并达成跨团队协同处理，其影响可能在下游被不断放大。因此“实时可见 + 跨团队协同”成为产品存在的核心原则。</p>
+      <ol class="cs-risks">
+        <li class="cs-risk" data-reveal>
+          <span class="cs-risk__num">01</span>
+          <h3>组件质量问题未及时追溯</h3>
+          <p class="cs-chain"><span>组件质量问题</span><span>未及时追溯</span><span>返工 / 报废 / 赔偿</span></p>
+        </li>
+        <li class="cs-risk" data-reveal style="--delay:.08s">
+          <span class="cs-risk__num">02</span>
+          <h3>产线架设不及时</h3>
+          <p class="cs-chain"><span>产线架设延迟</span><span>未及时处理</span><span>产能 / 生产计划偏离</span></p>
+        </li>
+        <li class="cs-risk" data-reveal style="--delay:.16s">
+          <span class="cs-risk__num">03</span>
+          <h3>转运能力错配</h3>
+          <p class="cs-chain"><span>交付预测偏差</span><span>未及时识别</span><span>转运资源错配 / 额外成本</span></p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 03 Status quo -->
+    <section class="cs-section" id="problem" aria-labelledby="s03">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s03">数据散落在六个以上的地方</h2>
+        <p class="cs-meta-label">03 · 问题现状</p>
+      </div>
+      <p class="cs-lead" data-reveal>在提产数据管理系统建立之前，各业务模块的运营经理分别维护 Ramp 期间的关键数据指标，并通过各个模块沿用的方式向上汇报。管理层看到的是某个时间点的“静态快照”，而非实时的全局视图，难以第一时间把控整体状况、识别跨模块风险。</p>
+      <ul class="cs-scatter">
+        <li data-reveal><h3>Excel 文档</h3><p>相关数据被折叠在多个、多层级的 Excel 文档中</p></li>
+        <li data-reveal style="--delay:.05s"><h3>数据不通用</h3><p>不同部门分别管理各自的数据库</p></li>
+        <li data-reveal style="--delay:.1s"><h3>PM 自维护数据</h3><p>部分数据和汇报方式停留在 PM 个人手中</p></li>
+        <li data-reveal style="--delay:.15s"><h3>Email 刷屏</h3><p>关键问题、异常信息靠邮件往来，不及时、难回溯、易刷屏</p></li>
+        <li data-reveal style="--delay:.2s"><h3>部门数据权限沟通耗时</h3><p>跨部门取数据需要找人、找权限</p></li>
+        <li data-reveal style="--delay:.25s"><h3>离线汇报文档</h3><p>人工汇总至 100+ 页报告，按周向上汇报</p></li>
+      </ul>
+      <a class="cs-down" href="#goals" aria-label="继续阅读：设计目标">↓</a>
+    </section>
+
+    <!-- 04 Goals -->
+    <section class="cs-section" id="goals" aria-labelledby="s04">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title cs-title--icon" id="s04"><img class="cs-title__icon" src="../../assets/img/ramp/icon-merge.svg" alt="" width="52" height="52">展示数据 + 支持决策。</h2>
+        <p class="cs-meta-label">04 · 设计目标</p>
+      </div>
+      <p class="cs-lead" data-reveal>这个提产数据管理系统由多部门、多角色共同使用，因此 UX 设计须同时服务「每天<strong>详细研究</strong>数据的人」和「<strong>快速扫读</strong>做决策的人」。</p>
+      <div class="cs-quotes">
+        <blockquote class="cs-quote cs-quote--dark" data-reveal>
+          <span class="cs-tag">用户类型 A · 管理层</span>
+          <p>“每个产品的 Ramp 进展如何？风险在哪里？接下来需要关注什么？”</p>
+        </blockquote>
+        <blockquote class="cs-quote" data-reveal style="--delay:.08s">
+          <span class="cs-tag">用户类型 B · 日常工作团队</span>
+          <p>查看对应模块数据，快速标记异常，准确预测上下游影响，一键向上汇报。</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- 05 AI -->
+    <section class="cs-section cs-section--ai" id="ai" aria-labelledby="s05">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s05">AI ≠ 对话机器人</h2>
+        <p class="cs-meta-label">05 · 设计 &amp; AI</p>
+      </div>
+      <p class="cs-lead cs-lead--narrow" data-reveal>项目中的 AI 具备了理解主要业务概念的能力。所以在对应功能的设计上，我会综合考虑哪些操作需要人手工触发，哪些数据是 AI 可以自行生成的。</p>
+
+      <div class="cs-ai-track" data-ai-track>
+        <div class="cs-ai" data-ai data-reveal>
+          <article class="cs-ai__step is-active" aria-label="场景 01">
+            <div class="cs-ai__copy">
+              <p class="cs-ai__head" aria-hidden="true"><span class="cs-ai__num">01</span><span class="cs-ai__tag">设计 &amp; AI</span></p>
+              <p class="cs-ai__text">在进行数据评注时，不再需要手动查询历史信息， AI 提供历史数据、相关材料辅助用户进行数据评注。</p>
+              <span class="cs-ai__rule" aria-hidden="true"><span></span></span>
+              <p class="cs-ai__hint" aria-hidden="true">继续滑动，查看下一个场景 <span>↓</span></p>
+            </div>
+            <figure class="cs-ai__panel">
+              <img src="../../assets/img/ramp/ai-remark.png" width="780" height="660" alt="数据评注流程：用户手动为数据点添加评注，AI Assist 引用历史数据生成辅助说明，用户确认后保存。">
+            </figure>
+          </article>
+          <article class="cs-ai__step" aria-label="场景 02">
+            <div class="cs-ai__copy">
+              <p class="cs-ai__head" aria-hidden="true"><span class="cs-ai__num">02</span><span class="cs-ai__tag">设计 &amp; AI</span></p>
+              <p class="cs-ai__text">当用户选取特定含义序列号时，AI 调用业务逻辑为用户展示业务数据，但不进行其他操作。</p>
+              <span class="cs-ai__rule" aria-hidden="true"><span></span></span>
+              <p class="cs-ai__hint" aria-hidden="true">继续滑动，查看下一个场景 <span>↓</span></p>
+            </div>
+            <figure class="cs-ai__panel">
+              <img src="../../assets/img/ramp/ai-linked.png" width="780" height="676" alt="关联信息：点击评注中的 QA 报告编号，展开对应的 QA 报告，包含描述、趋势分析与各 Wave 的分布数据。">
+            </figure>
+          </article>
+          <article class="cs-ai__step" aria-label="场景 03">
+            <div class="cs-ai__copy">
+              <p class="cs-ai__head" aria-hidden="true"><span class="cs-ai__num">03</span><span class="cs-ai__tag">设计 &amp; AI</span></p>
+              <p class="cs-ai__text">在对话式 AI 场景中， AI 占据引导位，帮助用户理解归纳和理解跨数据源的业务情况。</p>
+              <span class="cs-ai__rule" aria-hidden="true"><span></span></span>
+              <p class="cs-ai__hint" aria-hidden="true">继续滑动，查看更多设计方案举例 <span>↓</span></p>
+            </div>
+            <figure class="cs-ai__panel">
+              <img src="../../assets/img/ramp/ai-chatbot.png" width="780" height="674" alt="Ramp Data Management Chatbot：识别意图与关键词、确认角色权限、界定回答范围并检查数据就绪度，最后给出风险判断。">
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Modules -->
+    <section class="cs-section cs-section--ruled-top" id="modules" aria-labelledby="s06">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s06">统一的设计语言串联不同业务模块</h2>
+        <p class="cs-meta-label">06 · 设计 &amp; 业务</p>
+      </div>
+      <p class="cs-lead cs-lead--820" data-reveal>目标不是让所有模块使用完全相同的 UI 组件，而是在系统层面保持风格一致，同时允许不同业务领域表达自身的数据逻辑。</p>
+      <ul class="cs-mods">
+        <li class="cs-mod" data-reveal>
+          <div class="cs-mod__body"><p class="cs-mod__type">产线架设</p><h3>进度与状态</h3><p>通过可视化进度条和状态图表，展示计划架设产线数、当前架设进度和当前在产产线。</p></div>
+          <img class="cs-mod__viz" src="../../assets/img/ramp/mod-progress.png" width="230" height="122" alt="" loading="lazy">
+        </li>
+        <li class="cs-mod" data-reveal style="--delay:.06s">
+          <div class="cs-mod__body"><p class="cs-mod__type">质量暂扣</p><h3>影响范围和追溯根源</h3><p>用流程图视觉化展示涉及质量暂扣的零部件影响范围和环节。</p></div>
+          <img class="cs-mod__viz" src="../../assets/img/ramp/mod-trace.png" width="230" height="121" alt="" loading="lazy">
+        </li>
+        <li class="cs-mod" data-reveal style="--delay:.12s">
+          <div class="cs-mod__body"><p class="cs-mod__type">关键里程碑</p><h3>里程碑日期与变更</h3><p>围绕发售相关日期组织供应链的其他关键里程碑，并展示里程碑的变更记录与关键日期提醒。</p></div>
+          <img class="cs-mod__viz" src="../../assets/img/ramp/mod-milestone.png" width="230" height="115" alt="" loading="lazy">
+        </li>
+        <li class="cs-mod" data-reveal style="--delay:.18s">
+          <div class="cs-mod__body"><p class="cs-mod__type">关键部件数据</p><h3>密集数据</h3><p>合并重复字段，按照业务的不同层级对应展现数据列表。</p></div>
+          <img class="cs-mod__viz" src="../../assets/img/ramp/mod-dense.png" width="230" height="115" alt="" loading="lazy">
+        </li>
+      </ul>
+    </section>
+
+    <!-- 07 Design solutions -->
+    <section class="cs-section cs-section--cases" id="solutions" aria-labelledby="s07">
+      <h2 class="visually-hidden" id="s07">设计方案举例</h2>
+      <p class="cs-meta-label cs-meta-label--end">07 · 设计方案举例</p>
+
+      <!-- 07.1 Design language — 表现层 -->
+      <article class="cs-case" data-layer="1">
+        <div class="cs-case__head" data-reveal>
+          <div class="cs-layers" aria-label="对应用户体验要素：表现层"></div>
+          <div class="cs-case__text">
+            <p class="cs-case__from">不同业务源系统启用年代不同，视觉风格各异</p>
+            <span class="cs-case__arrow" aria-hidden="true">↓</span>
+            <h3 class="cs-case__title">提产数据管理系统采用融合统一的设计语言</h3>
+            <p class="cs-case__body">管理系统的设计语言既没有照搬 Apple 桌面系统的 UI，也没有直接套用内部业务系统的风格：前者存在感太强，后者太过沉闷。最终方案在两者之间取了平衡：沿用已有系统中反复出现的组件，降低用户的学习成本；同时在颜色、空间、图表的使用上更灵活，帮助用户在大量数据中更快地分辨和定位信息。</p>
+          </div>
+        </div>
+        <div class="cs-compare">
+          <div class="cs-compare__card" data-reveal>
+            <p class="cs-compare__label">Apple 桌面操作系统 UI</p>
+            <p class="cs-compare__text">UI 存在感强，放进数据密集的界面里，会和数据争夺注意力。</p>
+            <img src="../../assets/img/ramp/lang-apple.png" width="332" height="350" alt="Apple 桌面系统风格的对话框：毛玻璃背景与胶囊按钮。" loading="lazy">
+          </div>
+          <span class="cs-compare__arrow" aria-hidden="true">»</span>
+          <div class="cs-compare__card cs-compare__card--pick" data-reveal style="--delay:.08s">
+            <p class="cs-compare__chip">平衡：提产数据管理系统设计语言</p>
+            <img src="../../assets/img/ramp/lang-balance.png" width="332" height="426" alt="提产数据管理系统的对话框：简洁的白色卡片叠加在数据表格之上。" loading="lazy">
+          </div>
+          <span class="cs-compare__arrow" aria-hidden="true">«</span>
+          <div class="cs-compare__card" data-reveal style="--delay:.16s">
+            <p class="cs-compare__label">已有内部业务系统设计风格</p>
+            <p class="cs-compare__text">视觉风格偏沉闷，在处理大量跨业务模块的数据时，很容易让人产生视觉疲劳。</p>
+            <img src="../../assets/img/ramp/lang-internal.png" width="332" height="350" alt="内部业务系统风格的对话框与表单控件：灰色调、低对比。" loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <!-- 07.2 Milestones — 框架层 -->
+      <article class="cs-case" data-layer="2">
+        <div class="cs-case__head" data-reveal>
+          <div class="cs-layers" aria-label="对应用户体验要素：框架层"></div>
+          <div class="cs-case__text">
+            <p class="cs-case__from">不同模块业务数据间存在依赖关系</p>
+            <span class="cs-case__arrow" aria-hidden="true">↓</span>
+            <h3 class="cs-case__title">使用关键时间里程碑贯穿各业务模块</h3>
+            <p class="cs-case__body">通过与 PM 沟通业务内容和逻辑，我了解到关键时间里程碑（Key Milestones）是提产阶段中最先确定、并在整个过程中持续更新的数据，直接影响其他模块的进度安排。</p>
+          </div>
+        </div>
+        <button class="cs-shot" type="button" data-zoom data-reveal aria-label="放大查看：关键里程碑界面">
+          <img src="../../assets/img/ramp/case-milestones.png" width="1312" height="396" alt="系统界面：关键里程碑时间线横贯页面顶部，悬停可查看里程碑详情。" loading="lazy">
+        </button>
+      </article>
+
+      <!-- 07.3 Sync — 结构层 -->
+      <article class="cs-case" data-layer="3">
+        <div class="cs-case__head" data-reveal>
+          <div class="cs-layers" aria-label="对应用户体验要素：结构层"></div>
+          <div class="cs-case__text">
+            <p class="cs-case__from">供应链实时数据与管理层决策存在信息延迟</p>
+            <span class="cs-case__arrow" aria-hidden="true">↓</span>
+            <h3 class="cs-case__title">最新数据一键同步、随时查看</h3>
+            <p class="cs-case__body">工厂生产状态实时变化，但数据需要经对接负责人逐次确认并汇总成汇报文档，导致管理层对异常与进展的掌控存在滞后。在提产数据管理系统中，一线（working level）用户可随时查看工厂同步过来的实时数据；快速确认，该版本数据即同步给管理层（management）用户。</p>
+          </div>
+        </div>
+        <button class="cs-shot" type="button" data-zoom data-reveal aria-label="放大查看：数据同步界面">
+          <img src="../../assets/img/ramp/case-sync.png" width="1312" height="643" alt="系统界面：一线用户确认最新数据版本后，一键同步给管理层查看。" loading="lazy">
+        </button>
+      </article>
+
+      <!-- 07.4 Phases — 范围层 -->
+      <article class="cs-case" data-layer="4">
+        <div class="cs-case__head" data-reveal>
+          <div class="cs-layers" aria-label="对应用户体验要素：范围层"></div>
+          <div class="cs-case__text">
+            <p class="cs-case__from">业务数据根据来源，按照文档顺序进行汇报</p>
+            <span class="cs-case__arrow" aria-hidden="true">↓</span>
+            <h3 class="cs-case__title">根据生产和物流阶段划分业务模块和功能</h3>
+            <p class="cs-case__body">提产数据根据工厂组织生产的逻辑被划分为三个阶段。相比线性汇报文档，提产数据管理系统可以根据需要在不同业务模块数据之间进行交叉查看。</p>
+          </div>
+        </div>
+        <button class="cs-shot" type="button" data-zoom data-reveal aria-label="放大查看：按阶段划分的数据模块导航">
+          <img src="../../assets/img/ramp/case-phases.png" width="1312" height="524" alt="系统界面：Data Modules 菜单按 Phase I、Phase II、Phase IV 与异常管理分组。" loading="lazy">
+        </button>
+      </article>
+
+      <!-- 07.5 Summary — 战略层 -->
+      <article class="cs-case" data-layer="5">
+        <div class="cs-case__head" data-reveal>
+          <div class="cs-layers" aria-label="对应用户体验要素：战略层"></div>
+          <div class="cs-case__text">
+            <p class="cs-case__from">零散数据</p>
+            <span class="cs-case__arrow" aria-hidden="true">↓</span>
+            <h3 class="cs-case__title">总览页汇总所有产品、提产阶段全链路异常情况</h3>
+            <p class="cs-case__body">以 Summary 页面作为入口，展示所有进入提产阶段的产品。主要服务于部门负责人，帮助他们快速扫描整体状态，而非阅读每一个运营细节。</p>
+          </div>
+        </div>
+        <button class="cs-shot" type="button" data-zoom data-reveal aria-label="放大查看：Summary 总览页">
+          <img src="../../assets/img/ramp/case-summary.png" width="1312" height="524" alt="系统界面：Summary 总览页，以卡片形式列出各产品的预警与各阶段数据模块。" loading="lazy">
+        </button>
+      </article>
+    </section>
+
+    <!-- 08 Role -->
+    <section class="cs-section cs-section--ruled-top" id="role" aria-labelledby="s08">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s08">先独立主导，再与另一位设计师并行扩展</h2>
+        <p class="cs-meta-label">08 · 我的设计角色</p>
+      </div>
+      <div class="cs-roles" data-reveal>
+        <div class="cs-role">
+          <p class="cs-role__phase">规划期 — 独立主导</p>
+          <h3 class="cs-role__title">0 → 1 定义系统的骨架</h3>
+          <p class="cs-role__who">独立负责全部设计决策</p>
+          <ul>
+            <li><strong>独立主导</strong>系统整体架构的设计探索，并获得管理层批准</li>
+            <li>定义<strong>跨模块</strong>数据呈现方式</li>
+            <li>走通第一个<strong>核心模块原型</strong>作为后续模块设计基础</li>
+          </ul>
+        </div>
+        <div class="cs-role">
+          <p class="cs-role__phase">扩展期 — 双设计师并行</p>
+          <h3 class="cs-role__title">1 → 14 + 4 模块的组件化扩展</h3>
+          <p class="cs-role__who">我负责其中 10 个模块，并与第二位设计师协同</p>
+          <ul>
+            <li>抽取<strong>全局组件</strong>：例如数据评注功能、通用页面导航等</li>
+            <li>建立并行的<strong>协作流程</strong>：独立提案设计初稿 → 与开发和模块对接人评审 → PM 对齐 → 与另一位设计师沟通设计详情并沉淀复用组件</li>
+            <li><strong>与另一位设计师协同推进与 AI 有关的创新功能（如辅助生成评注等）</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 Reflection -->
+    <section class="cs-section" id="reflection" aria-labelledby="s09">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s09">从 Wave 1 到 Wave 2，持续生长。</h2>
+        <p class="cs-meta-label">09 · Design Reflection</p>
+      </div>
+      <ol class="cs-flow" data-reveal>
+        <li><h3>把操作凝练为界面</h3><p>在产品经理的带领下，先搞理解各个业务模块需要展示的核心信息，以及业务人员在做 Ramp 汇报时哪些步骤经常需要反复来回操作。然后把关键信息做成清晰的页面，把重复的操作变成自动完成。</p></li>
+        <li><h3>先做通用样例，再多线推进</h3><p>项目里包含十多个子模块，我选择从所有模块都需要的总览（Summary）页面开始做。这样能更快获得所有模块负责人对设计风格的初步认可。之后再根据每个子业务模块的具体需求逐步完善。</p></li>
+        <li><h3>平衡数据完整性和可读性</h3><p>设计时跟每个业务模块负责人一起确认：既要保留供应链原始数据的样子，又要让界面美观易读，在两者之间找到动态平衡。</p></li>
+        <li><h3>设计好用的业务 AI 工作流</h3><p>在设计中模拟业务人员常做的任务，找到适合 AI 落地的页面场景并统一视觉展示。对应功能设计包括业务人员对数据进行评注时，AI 根据历史数据、其他模块信息等生成辅助信息；根据锚点概念，联想相关数据并跳转到对应模块；关于提产情况综合查询的对话机器人等。</p></li>
+        <li><h3>组件跟随业务需求迭代</h3><p>离开项目之后，这套适用于供应链密集数据的设计风格和组件复用规则还在运转。组件跟着业务需求一起开发和迭代，新需求能持续快速落地，也避免组件库脱离业务。</p></li>
+      </ol>
+    </section>
+
+    <footer class="footer cs-footer" id="contact">
+      <div class="legal">
+        <p>© 2026 LINXI&nbsp;&nbsp;.✦ ˖</p>
+        <a class="lang-toggle" href="../../#featured" hreflang="en" data-lang-switch aria-label="Switch to English（切换到英文）" lang="en"><span>A</span><span class="is-on" lang="zh-CN">中</span></a>
+        <a href="https://www.linkedin.com/in/lilinxi/" target="_blank" rel="noopener">LINKEDIN</a>
+        <p>中国 · 上海</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Screenshot zoom -->
+  <dialog class="cs-lightbox" aria-label="放大查看">
+    <form method="dialog"><button class="cs-lightbox__close" aria-label="关闭">×</button></form>
+    <img alt="">
+  </dialog>
+
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/case.js"></script>
+</body>
+</html>
