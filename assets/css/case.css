@@ -484,9 +484,10 @@
     scroll-snap-type: y proximity;
   }
 
-  /* about one screen of scrolling per scenario */
+  /* about 1.8 screens of scrolling per scenario (the last one ~2.9, matching the
+     1.6 weight in case.js), so each image has time to register */
   .cs-ai-track.is-pinned {
-    height: calc(100vh * 3 + 100vh);
+    height: calc(180vh * 3.6 + 100vh);
   }
 
   .cs-ai-track.is-pinned .cs-ai {
@@ -693,14 +694,11 @@
 
 .cs-layers__plane {
   position: absolute;
-  left: 43.15px;
-  width: 74.41px;
-  height: 21.43px;
+  left: 43px;
+  width: 74px;
+  height: 21px;
+  overflow: visible;
   transition: opacity 0.6s var(--ease), translate 0.7s var(--ease);
-}
-
-.cs-layers__plane.is-off {
-  opacity: 0.22;
 }
 
 .cs-layers__label {
@@ -718,11 +716,17 @@
   opacity: 1;
 }
 
+.cs-layers__label.is-hidden {
+  opacity: 0;
+}
+
 .cs-layers__line {
   position: absolute;
   left: 118.5px;
   width: 62.5px;
-  height: 1px;
+  height: 0.5px;
+  margin-top: -0.25px;
+  border-radius: 0.25px;
   transform-origin: left center;
   transition: transform 0.8s var(--ease) 0.3s;
 }
@@ -745,10 +749,10 @@
   transform: scaleX(0);
 }
 
-.cs-layers__plane:nth-child(2) { transition-delay: 0.08s; }
-.cs-layers__plane:nth-child(3) { transition-delay: 0.16s; }
-.cs-layers__plane:nth-child(4) { transition-delay: 0.24s; }
-.cs-layers__plane:nth-child(5) { transition-delay: 0.32s; }
+.cs-layers__plane:nth-of-type(2) { transition-delay: 0.08s; }
+.cs-layers__plane:nth-of-type(3) { transition-delay: 0.16s; }
+.cs-layers__plane:nth-of-type(4) { transition-delay: 0.24s; }
+.cs-layers__plane:nth-of-type(5) { transition-delay: 0.32s; }
 
 /* Design-language comparison */
 .cs-compare {
