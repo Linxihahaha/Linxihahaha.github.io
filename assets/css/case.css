@@ -1080,3 +1080,11 @@
   .cs-layers__plane,
   .cs-layers__line { transition: none; }
 }
+
+/* English page: small labels are set in capitals, as in the Figma frame (712:1439) */
+:lang(en) .cs-meta dt,
+:lang(en) .cs-tag,
+:lang(en) .cs-mod__type,
+:lang(en) .cs-role__phase,
+:lang(en) .cs-ai__hint,
+:lang(en) .cs-compare__chip { text-transform: uppercase; }

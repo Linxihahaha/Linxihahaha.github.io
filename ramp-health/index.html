@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ramp Status Management System — Linxi Li</title>
+  <meta name="description" content="A data monitoring and management platform for the production ramp of new Apple products: data from a dozen-plus modules, once scattered across email, Excel and department systems, brought into one real-time ramp status dashboard.">
+  <meta property="og:title" content="Ramp Status Management System — Linxi Li">
+  <meta property="og:description" content="Taking data updates from weekly to minute-level: a case study in complex B2B, data-intensive products and AI UX.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:url" content="https://hellolinxi.com/ramp-health/">
+  <meta property="og:site_name" content="Linxi Li">
+  <meta property="og:image" content="https://hellolinxi.com/assets/img/ramp-health-banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://hellolinxi.com/ramp-health/">
+  <link rel="alternate" hreflang="en" href="https://hellolinxi.com/ramp-health/">
+  <link rel="alternate" hreflang="zh-CN" href="https://hellolinxi.com/zh/ramp-health/">
+  <link rel="alternate" hreflang="x-default" href="https://hellolinxi.com/ramp-health/">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/case.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="cs">
+
+  <header class="site-header" id="top">
+    <div class="page">
+      <div class="site-header__inner">
+        <a class="logo" href="../" aria-label="Linxi — home">
+          <span class="logo__mark">L</span>
+          <span class="logo__text">Linxi / expertise in complex systems design</span>
+        </a>
+        <nav class="nav" aria-label="Main">
+          <a class="nav__link is-active" href="../#featured" aria-current="page">[01] Featured</a>
+          <a class="nav__link" href="../#work">[02] Selected Work</a>
+          <a class="nav__link" href="../#approach">[03] How I Work</a>
+          <a class="nav__link" href="../assets/resume/LinxiLi_李林溪_Resume_简历.pdf" download="LinxiLi_李林溪_Resume_简历.pdf">[04] Resume</a>
+        </nav>
+      </div>
+    </div>
+    <div class="cs-progress" aria-hidden="true"><span></span></div>
+  </header>
+
+  <main class="page">
+
+    <!-- Hero -->
+    <section class="cs-hero" aria-labelledby="cs-title">
+      <p class="cs-hero__eyebrow" data-reveal>Complex B2B · Enterprise UX · Data-intensive products · AI UX</p>
+      <h1 class="cs-hero__title" id="cs-title" data-reveal style="--delay:.06s">Ramp Status Management System</h1>
+      <p class="cs-hero__note" data-reveal style="--delay:.12s">* This case study focuses on the design process and the reasoning behind decisions. It contains no confidential details.</p>
+      <div class="cs-hero__copy" data-reveal style="--delay:.18s">
+        <p>The Ramp Status Management System is a data monitoring and management platform for the production ramp of new products in Apple’s internal supply chain. It brings data from a dozen-plus modules, once scattered across email, Excel, offline documents and department systems, into one real-time ramp status dashboard that spans every product. Operations managers who own different modules collaborate live and report efficiently, leaders see alerts and risks at a glance, and data updates move from weekly to minute-level.</p>
+        <p>As the UI/UX designer, I <strong>led the system’s information architecture on my own in the early phase</strong>, along with the design of the Summary home page. Later I worked in parallel with a second designer to extend the design to every module, and supported engineering through implementation.</p>
+      </div>
+      <dl class="cs-meta" data-reveal style="--delay:.24s">
+        <div><dt>My role</dt><dd>UI/UX Designer</dd></div>
+        <div><dt>Scope</dt><dd><span data-count="18">18</span> function modules</dd></div>
+        <div><dt>Stakeholders</dt><dd><span data-count="11">11</span> PMs · leadership · engineering</dd></div>
+        <div><dt>Design team</dt><dd>2 UI/UX designers</dd></div>
+        <div><dt>My involvement</dt><dd>7 months, from Wave 1 into Wave 2</dd></div>
+      </dl>
+    </section>
+
+    <!-- 01 Background -->
+    <section class="cs-section" id="background" aria-labelledby="s01">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s01">Ramp: a fast-paced, highly uncertain stage of the supply chain</h2>
+        <p class="cs-meta-label">01 · Background</p>
+      </div>
+      <p class="cs-lead" data-reveal>Before every new Apple product goes on sale, it passes through the ramp: the window in which production moves from small pilot runs to full mass production. Output and yield climb step by step until they reach target capacity and the expected shipping capability.</p>
+    </section>
+
+    <!-- 02 Risk -->
+    <section class="cs-section cs-section--risk" id="risk" aria-labelledby="s02">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s02">An anomaly missed during the ramp = a potentially enormous cost</h2>
+        <p class="cs-meta-label">02 · Risk scenarios</p>
+      </div>
+      <p class="cs-lead" data-reveal>When an anomaly is not caught in time and handled across teams, its impact can keep growing downstream. “Real-time visibility + cross-team collaboration” therefore became the core principle of the product.</p>
+      <ol class="cs-risks">
+        <li class="cs-risk" data-reveal>
+          <span class="cs-risk__num">01</span>
+          <h3>Component quality issues not traced in time</h3>
+          <p class="cs-chain"><span>Component quality issue</span><span>Not traced in time</span><span>Rework / scrap / compensation</span></p>
+        </li>
+        <li class="cs-risk" data-reveal style="--delay:.08s">
+          <span class="cs-risk__num">02</span>
+          <h3>Production lines not built up on time</h3>
+          <p class="cs-chain"><span>Line buildup delayed</span><span>Not handled in time</span><span>Capacity / production plan off track</span></p>
+        </li>
+        <li class="cs-risk" data-reveal style="--delay:.16s">
+          <span class="cs-risk__num">03</span>
+          <h3>Mismatched transport capacity</h3>
+          <p class="cs-chain"><span>Delivery forecast deviates</span><span>Not spotted in time</span><span>Misallocated transport / extra cost</span></p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 03 Status quo -->
+    <section class="cs-section" id="problem" aria-labelledby="s03">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s03">Data scattered across more than six places</h2>
+        <p class="cs-meta-label">03 · The status quo</p>
+      </div>
+      <p class="cs-lead" data-reveal>Before the system existed, the operations managers of each business module maintained their own key ramp metrics and reported upward in whatever way their module had always used. Leaders saw a static snapshot of one point in time, not a live overall view, which made it hard to grasp the whole picture early or to spot risks that cut across modules.</p>
+      <ul class="cs-scatter">
+        <li data-reveal><h3>Excel files</h3><p>Data folded away in multiple, multi-level Excel files</p></li>
+        <li data-reveal style="--delay:.05s"><h3>Siloed data</h3><p>Each department managed its own database</p></li>
+        <li data-reveal style="--delay:.1s"><h3>PM-maintained data</h3><p>Some data and reporting methods lived only with individual PMs</p></li>
+        <li data-reveal style="--delay:.15s"><h3>Email floods</h3><p>Key issues and anomalies travelled by email: late, hard to trace, and flooding inboxes</p></li>
+        <li data-reveal style="--delay:.2s"><h3>Slow data-access requests</h3><p>Getting data across departments meant finding the right person and the right permission</p></li>
+        <li data-reveal style="--delay:.25s"><h3>Offline report decks</h3><p>Compiled by hand into 100+ page reports and presented upward every week</p></li>
+      </ul>
+      <a class="cs-down" href="#goals" aria-label="Continue reading: design goals">↓</a>
+    </section>
+
+    <!-- 04 Goals -->
+    <section class="cs-section" id="goals" aria-labelledby="s04">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title cs-title--icon" id="s04"><img class="cs-title__icon" src="../assets/img/ramp/icon-merge.svg" alt="" width="52" height="52">Show the data + support decisions.</h2>
+        <p class="cs-meta-label">04 · Design goals</p>
+      </div>
+      <p class="cs-lead" data-reveal>The system is shared by many departments and roles, so the UX has to serve both the people who <strong>study the data in detail</strong> every day and the people who <strong>scan it quickly</strong> to make decisions.</p>
+      <div class="cs-quotes">
+        <blockquote class="cs-quote cs-quote--dark" data-reveal>
+          <span class="cs-tag">User type A · Leadership</span>
+          <p>“How is each product’s ramp going? Where are the risks? What needs attention next?”</p>
+        </blockquote>
+        <blockquote class="cs-quote" data-reveal style="--delay:.08s">
+          <span class="cs-tag">User type B · Day-to-day working teams</span>
+          <p>View the data for their module, flag anomalies quickly, predict upstream and downstream impact accurately, and report upward promptly.</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- 05 AI -->
+    <section class="cs-section cs-section--ai" id="ai" aria-labelledby="s05">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s05">AI ≠ a chatbot</h2>
+        <p class="cs-meta-label">05 · Design &amp; AI</p>
+      </div>
+      <p class="cs-lead cs-lead--narrow" data-reveal>The AI in this project understands the main business concepts. So for each AI-related feature, I weighed which actions a person should trigger by hand and which data the AI can generate on its own.</p>
+
+      <div class="cs-ai-track" data-ai-track>
+        <div class="cs-ai" data-ai data-reveal>
+          <article class="cs-ai__step is-active" aria-label="Scenario 01">
+            <div class="cs-ai__copy">
+              <p class="cs-ai__head" aria-hidden="true"><span class="cs-ai__num">01</span><span class="cs-ai__tag">Design &amp; AI</span></p>
+              <p class="cs-ai__text">When adding a remark to a data point, users no longer look up history by hand. The AI supplies historical data and related material to help them write it.</p>
+              <span class="cs-ai__rule" aria-hidden="true"><span></span></span>
+              <p class="cs-ai__hint" aria-hidden="true">Keep scrolling for the next scenario <span>↓</span></p>
+            </div>
+            <figure class="cs-ai__panel">
+              <img src="../assets/img/ramp/ai-remark.webp" loading="lazy" decoding="async" width="780" height="660" alt="Remark flow: the user adds a remark to a data point, AI Assist drafts supporting text from historical data, and the user confirms and saves.">
+            </figure>
+          </article>
+          <article class="cs-ai__step" aria-label="Scenario 02">
+            <div class="cs-ai__copy">
+              <p class="cs-ai__head" aria-hidden="true"><span class="cs-ai__num">02</span><span class="cs-ai__tag">Design &amp; AI</span></p>
+              <p class="cs-ai__text">When a user selects a serial number that carries business meaning, the AI applies business logic to show the related data, and takes no other action.</p>
+              <span class="cs-ai__rule" aria-hidden="true"><span></span></span>
+              <p class="cs-ai__hint" aria-hidden="true">Keep scrolling for the next scenario <span>↓</span></p>
+            </div>
+            <figure class="cs-ai__panel">
+              <img src="../assets/img/ramp/ai-linked.webp" loading="lazy" decoding="async" width="780" height="676" alt="Linked information: clicking a QA report number in a remark opens that report, with its description, trend analysis and distribution across waves.">
+            </figure>
+          </article>
+          <article class="cs-ai__step" aria-label="Scenario 03">
+            <div class="cs-ai__copy">
+              <p class="cs-ai__head" aria-hidden="true"><span class="cs-ai__num">03</span><span class="cs-ai__tag">Design &amp; AI</span></p>
+              <p class="cs-ai__text">In the conversational scenario, the AI takes the guiding role, helping users summarize and understand the business situation across data sources.</p>
+              <span class="cs-ai__rule" aria-hidden="true"><span></span></span>
+              <p class="cs-ai__hint" aria-hidden="true">Keep scrolling for more design examples <span>↓</span></p>
+            </div>
+            <figure class="cs-ai__panel">
+              <img src="../assets/img/ramp/ai-chatbot.webp" loading="lazy" decoding="async" width="780" height="674" alt="Ramp Data Management Chatbot: it extracts intent and keywords, confirms role and permissions, defines the scope of the answer, checks data readiness, then gives a risk assessment.">
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 Modules -->
+    <section class="cs-section cs-section--ruled-top" id="modules" aria-labelledby="s06">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s06">One design language connecting different business modules</h2>
+        <p class="cs-meta-label">06 · Design &amp; business</p>
+      </div>
+      <p class="cs-lead cs-lead--820" data-reveal>The goal was not to make every module use identical UI components. It was to keep the style consistent at system level while letting each business domain express its own data logic.</p>
+      <ul class="cs-mods">
+        <li class="cs-mod" data-reveal>
+          <div class="cs-mod__body"><p class="cs-mod__type">Line buildup</p><h3>Progress and status</h3><p>Progress bars and status charts show the planned number of lines, current buildup progress and the lines now in production.</p></div>
+          <img class="cs-mod__viz" src="../assets/img/ramp/mod-progress.webp" width="230" height="122" alt="" loading="lazy">
+        </li>
+        <li class="cs-mod" data-reveal style="--delay:.06s">
+          <div class="cs-mod__body"><p class="cs-mod__type">Quality hold</p><h3>Impact scope and root-cause tracing</h3><p>A flow diagram visualizes which parts and stages a quality hold affects.</p></div>
+          <img class="cs-mod__viz" src="../assets/img/ramp/mod-trace.webp" width="230" height="121" alt="" loading="lazy">
+        </li>
+        <li class="cs-mod" data-reveal style="--delay:.12s">
+          <div class="cs-mod__body"><p class="cs-mod__type">Key milestones</p><h3>Milestone dates and changes</h3><p>The supply chain’s other key milestones are organized around the launch dates, with a change history and reminders for key dates.</p></div>
+          <img class="cs-mod__viz" src="../assets/img/ramp/mod-milestone.webp" width="230" height="115" alt="" loading="lazy">
+        </li>
+        <li class="cs-mod" data-reveal style="--delay:.18s">
+          <div class="cs-mod__body"><p class="cs-mod__type">Key component data</p><h3>Dense data</h3><p>Repeated fields are merged, and data lists follow the levels of the business hierarchy.</p></div>
+          <img class="cs-mod__viz" src="../assets/img/ramp/mod-dense.webp" width="230" height="115" alt="" loading="lazy">
+        </li>
+      </ul>
+    </section>
+
+    <!-- 07 Design solutions -->
+    <section class="cs-section cs-section--cases" id="solutions" aria-labelledby="s07">
+      <h2 class="visually-hidden" id="s07">Design examples</h2>
+      <p class="cs-meta-label cs-meta-label--end">07 · Design examples</p>
+
+      <!-- 07.1 Design language — surface -->
+      <article class="cs-case" data-layer="1">
+        <div class="cs-case__head" data-reveal>
+          <div class="cs-layers" aria-label="Element of user experience: surface"></div>
+          <div class="cs-case__text">
+            <p class="cs-case__from">Source systems date from different eras and look different</p>
+            <span class="cs-case__arrow" aria-hidden="true">↓</span>
+            <h3 class="cs-case__title">A blended, unified design language for the system</h3>
+            <p class="cs-case__body">The design language neither copies the UI of Apple’s desktop operating system nor reuses the style of the internal business systems: the first is too eye-catching, the second too dull. The final direction sits between the two. It keeps the components that recur across existing systems, which lowers the learning cost, and uses color, space and charts more freely, so users can tell information apart and locate it faster in large volumes of data.</p>
+          </div>
+        </div>
+        <div class="cs-compare">
+          <div class="cs-compare__card" data-reveal>
+            <p class="cs-compare__label">Apple desktop OS UI</p>
+            <p class="cs-compare__text">A strong UI presence. In a data-dense interface it competes with the data for attention.</p>
+            <img src="../assets/img/ramp/lang-apple.webp" width="332" height="350" alt="A dialog in the Apple desktop style: frosted-glass background and capsule buttons." loading="lazy">
+          </div>
+          <span class="cs-compare__arrow" aria-hidden="true">»</span>
+          <div class="cs-compare__card cs-compare__card--pick" data-reveal style="--delay:.08s">
+            <p class="cs-compare__chip">The balance: this system’s design language</p>
+            <img src="../assets/img/ramp/lang-balance.webp" width="332" height="426" alt="A dialog in the Ramp Status Management System: a clean white card layered over a data table." loading="lazy">
+          </div>
+          <span class="cs-compare__arrow" aria-hidden="true">«</span>
+          <div class="cs-compare__card" data-reveal style="--delay:.16s">
+            <p class="cs-compare__label">Existing internal systems</p>
+            <p class="cs-compare__text">A duller visual style. With large amounts of data across business modules, it quickly causes visual fatigue.</p>
+            <img src="../assets/img/ramp/lang-internal.webp" width="332" height="350" alt="A dialog and form controls in the internal systems’ style: grey tones and low contrast." loading="lazy">
+          </div>
+        </div>
+      </article>
+
+      <!-- 07.2 Milestones — skeleton -->
+      <article class="cs-case" data-layer="2">
+        <div class="cs-case__head" data-reveal>
+          <div class="cs-layers" aria-label="Element of user experience: skeleton"></div>
+          <div class="cs-case__text">
+            <p class="cs-case__from">Business data in different modules depends on each other</p>
+            <span class="cs-case__arrow" aria-hidden="true">↓</span>
+            <h3 class="cs-case__title">Key milestones run through every business module</h3>
+            <p class="cs-case__body">Talking through the business content and logic with the PMs, I learned that Key Milestones are the first data to be fixed in a ramp and keep being updated throughout, and that they directly shape the schedule of every other module.</p>
+          </div>
+        </div>
+        <button class="cs-shot" type="button" data-zoom data-reveal aria-label="Zoom in: key milestones screen">
+          <img src="../assets/img/ramp/en/case-milestones.webp" width="1312" height="396" alt="System screen: the key milestone timeline runs across the top of the page; hovering shows milestone details." loading="lazy">
+        </button>
+      </article>
+
+      <!-- 07.3 Sync — structure -->
+      <article class="cs-case" data-layer="3">
+        <div class="cs-case__head" data-reveal>
+          <div class="cs-layers" aria-label="Element of user experience: structure"></div>
+          <div class="cs-case__text">
+            <p class="cs-case__from">Leadership learns about supply chain data through weekly reports</p>
+            <span class="cs-case__arrow" aria-hidden="true">↓</span>
+            <h3 class="cs-case__title">The latest data, synced in one click and always available</h3>
+            <p class="cs-case__body">Factory production status changes in real time, but the data used to be confirmed level by level and then compiled into report documents, so leaders’ view of anomalies and progress lagged behind. In the system, working-level users can see the live data synced from the factory at any time. Once they confirm it, that version of the data is synced to management users.</p>
+          </div>
+        </div>
+        <button class="cs-shot" type="button" data-zoom data-reveal aria-label="Zoom in: data sync screen">
+          <img src="../assets/img/ramp/en/case-sync.webp" width="1312" height="643" alt="System screen: a working-level user confirms the latest data version and syncs it to management in one click." loading="lazy">
+        </button>
+      </article>
+
+      <!-- 07.4 Phases — scope -->
+      <article class="cs-case" data-layer="4">
+        <div class="cs-case__head" data-reveal>
+          <div class="cs-layers" aria-label="Element of user experience: scope"></div>
+          <div class="cs-case__text">
+            <p class="cs-case__from">Business data was reported by data source, in document order</p>
+            <span class="cs-case__arrow" aria-hidden="true">↓</span>
+            <h3 class="cs-case__title">Modules and features grouped by production and logistics phase</h3>
+            <p class="cs-case__body">Ramp data is divided into three phases, following the way the factory organizes production. Unlike a linear report document, the system lets users cross-reference data between business modules whenever they need to.</p>
+          </div>
+        </div>
+        <button class="cs-shot" type="button" data-zoom data-reveal aria-label="Zoom in: data module navigation grouped by phase">
+          <img src="../assets/img/ramp/en/case-phases.webp" width="1312" height="524" alt="System screen: the Data Modules menu grouped into Phase I, Phase II, Phase IV and exception management." loading="lazy">
+        </button>
+      </article>
+
+      <!-- 07.5 Summary — strategy -->
+      <article class="cs-case" data-layer="5">
+        <div class="cs-case__head" data-reveal>
+          <div class="cs-layers" aria-label="Element of user experience: strategy"></div>
+          <div class="cs-case__text">
+            <p class="cs-case__from">Scattered data</p>
+            <span class="cs-case__arrow" aria-hidden="true">↓</span>
+            <h3 class="cs-case__title">A Summary page gathering anomalies across all products and the whole ramp</h3>
+            <p class="cs-case__body">The Summary page is the entry point and shows every product that has entered the ramp. It mainly serves department heads, helping them scan the overall status quickly without reading every operational detail.</p>
+          </div>
+        </div>
+        <button class="cs-shot" type="button" data-zoom data-reveal aria-label="Zoom in: Summary page">
+          <img src="../assets/img/ramp/en/case-summary.webp" width="1312" height="524" alt="System screen: the Summary page lists each product as a card with its alerts and the data modules of each phase." loading="lazy">
+        </button>
+      </article>
+    </section>
+
+    <!-- 08 Role -->
+    <section class="cs-section cs-section--ruled-top" id="role" aria-labelledby="s08">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s08">Leading solo first, then scaling in parallel with a second designer</h2>
+        <p class="cs-meta-label">08 · My design role</p>
+      </div>
+      <div class="cs-roles" data-reveal>
+        <div class="cs-role">
+          <p class="cs-role__phase">Planning phase — solo lead</p>
+          <h3 class="cs-role__title">0 → 1: defining the system’s skeleton</h3>
+          <p class="cs-role__who">Solely responsible for every design decision</p>
+          <ul>
+            <li><strong>Led</strong> the design exploration of the overall system architecture <strong>on my own</strong> and got it approved by leadership</li>
+            <li>Defined how data is presented <strong>across modules</strong></li>
+            <li>Took the first <strong>core module prototype</strong> end to end as the basis for the modules that followed</li>
+          </ul>
+        </div>
+        <div class="cs-role">
+          <p class="cs-role__phase">Scaling phase — two designers in parallel</p>
+          <h3 class="cs-role__title">1 → 14 + 4: scaling the modules with components</h3>
+          <p class="cs-role__who">I owned 10 of the modules and coordinated with the second designer</p>
+          <ul>
+            <li>Extracted <strong>global components</strong>, such as data remarks and shared page navigation</li>
+            <li>Set up a parallel <strong>collaboration workflow</strong>: propose a first draft independently → review with engineering and the module owner → align with the PM → walk through the details with the other designer and turn them into reusable components</li>
+            <li><strong>Drove the AI-related features, such as assisted remark generation, together with the other designer</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 Reflection -->
+    <section class="cs-section" id="reflection" aria-labelledby="s09">
+      <div class="cs-head" data-reveal>
+        <h2 class="cs-title" id="s09">From Wave 1 to Wave 2, still growing.</h2>
+        <p class="cs-meta-label">09 · Reflections</p>
+      </div>
+      <ol class="cs-flow" data-reveal>
+        <li><h3>Distill operations into interface</h3><p>Guided by the product managers, I first worked out the core information each business module needs to show, and which steps people repeat back and forth when they prepare a ramp report. Then I turned the key information into clear pages and the repeated steps into things the system does automatically.</p></li>
+        <li><h3>Build a shared example first, then work in parallel</h3><p>The project has more than ten sub-modules, so I started with the Summary page that every module needs. That won early agreement on the design style from all the module owners. After that I refined each sub-module according to its own needs.</p></li>
+        <li><h3>Balance data completeness and readability</h3><p>I confirmed the design with each module owner: keep the supply chain data in its original shape, and keep the interface clean and easy to read. The balance between the two keeps shifting.</p></li>
+        <li><h3>Design AI workflows that work for the business</h3><p>I simulated the tasks people do most often to find the screens where AI fits, and gave those moments one visual treatment. The features include AI-generated supporting text, drawn from historical data and other modules, when someone adds a remark; jumping from an anchor concept to related data in the right module; and a chatbot for overall questions about ramp status.</p></li>
+        <li><h3>Components evolve with business needs</h3><p>After I left the project, the design style for dense supply chain data and the rules for reusing components are still in use. Components are built and iterated alongside business needs, so new requirements keep landing quickly and the component library never drifts away from the business.</p></li>
+      </ol>
+    </section>
+
+    <footer class="footer cs-footer" id="contact">
+      <div class="legal">
+        <p>© 2026 LINXI&nbsp;&nbsp;.✦ ˖</p>
+        <a class="lang-toggle" href="../zh/ramp-health/" hreflang="zh-CN" data-lang-switch aria-label="切换到中文 (Switch to Chinese)" lang="zh-CN"><span class="is-on" lang="en">A</span><span>中</span></a>
+        <a href="https://www.linkedin.com/in/lilinxi/" target="_blank" rel="noopener">LINKEDIN</a>
+        <p>SHANGHAI, CN</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Screenshot zoom -->
+  <dialog class="cs-lightbox" aria-label="Zoomed view">
+    <form method="dialog"><button class="cs-lightbox__close" aria-label="Close">×</button></form>
+    <img alt="">
+  </dialog>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/case.js"></script>
+</body>
+</html>

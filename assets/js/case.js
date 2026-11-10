@@ -23,16 +23,17 @@
   // component (node 220:7314). Planes from the active one down are filled; planes
   // above it are outline only. Labels above are dimmed, labels below are hidden.
   // Gradient vectors are copied per plane from the Figma export.
+  var en = !/^zh/i.test(document.documentElement.lang || '');
   var planes = [
-    { name: '表现层', top: 35, mid: 48, line: 48, color: '#00C0E8',
+    { name: en ? 'Surface' : '表现层', top: 35, mid: 48, line: 48, color: '#00C0E8',
       fill: ['#00C0E8', '#0E92AD', 0.16, '11.85 -8 4.85 23.5'], edge: ['#006C82', '-22.29 10.71 66.7 10.71'] },
-    { name: '框架层', top: 59, mid: 72, line: 73, color: '#6155F5',
+    { name: en ? 'Skeleton' : '框架层', top: 59, mid: 72, line: 73, color: '#6155F5',
       fill: ['#6155F5', '#1F12B9', 0.14, '14.85 -5 26.85 24.5'], edge: ['#39328F', '22.21 21.43 22.21 0'] },
-    { name: '结构层', top: 84, mid: 97, line: 97, color: '#CB30E0',
+    { name: en ? 'Structure' : '结构层', top: 84, mid: 97, line: 97, color: '#CB30E0',
       fill: ['#CB30E0', '#8F05A1', 0.15, '34.21 0 10.2 21.43'], edge: ['#6F1A7A', '66.7 10.71 -22.29 10.71'] },
-    { name: '范围层', top: 108, mid: 121, line: 121, color: '#34C759',
+    { name: en ? 'Scope' : '范围层', top: 108, mid: 121, line: 121, color: '#34C759',
       fill: ['#34C759', '#00BD30', 0.16, '52.35 -6 -17.15 25'], edge: ['#19612B', '22.21 0 22.21 21.43'] },
-    { name: '战略层', top: 133, mid: 146, line: 146, color: '#FFCC00',
+    { name: en ? 'Strategy' : '战略层', top: 133, mid: 146, line: 146, color: '#FFCC00',
       fill: ['#FFCC00', '#FFD83B', 0.2, '-22.15 16.5 66.85 0'], edge: ['#997A00', '-22.29 10.71 66.7 10.71'] }
   ];
   var grad = function (id, xy, a, b) {
