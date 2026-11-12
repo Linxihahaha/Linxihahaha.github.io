@@ -1061,11 +1061,10 @@
   justify-content: flex-end;
   gap: 6px;
   max-width: 100%;
-  min-height: 20px;
   color: var(--label);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 20px;
+  line-height: normal;
   text-align: right;
   text-decoration: none;
 }
