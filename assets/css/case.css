@@ -992,7 +992,7 @@
   border-bottom: 0;
 }
 
-#reflection + .cs-footer {
+#reflection + .cs-project-nav + .cs-footer {
   border-top: 0;
 }
 
@@ -1046,6 +1046,43 @@
   font-size: 13px;
   line-height: 1.7;
   color: var(--ink-2);
+}
+
+/* Project-to-project navigation, matching the Figma Link section. */
+.cs-project-nav {
+  display: flex;
+  justify-content: flex-end;
+  padding-block: 24px;
+}
+
+.cs-project-nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  max-width: 100%;
+  min-height: 20px;
+  color: var(--label);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: right;
+  text-decoration: none;
+}
+
+.cs-project-nav__link img {
+  flex: 0 0 auto;
+}
+
+.cs-project-nav__link:hover {
+  color: var(--blue);
+}
+
+:lang(zh) .cs-project-nav__link {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 14px;
+  min-height: 14px;
 }
 
 .cs-footer {
