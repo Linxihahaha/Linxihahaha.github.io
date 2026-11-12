@@ -546,7 +546,7 @@
 
   /* keep the card inside short viewports */
   .cs-ai-track.is-pinned .cs-ai__panel img {
-    width: min(100%, calc((100vh - 120px) * 780 / 676));
+    width: min(100%, calc((100vh - 120px) * 780 / 674));
     margin-left: auto;
   }
 }
