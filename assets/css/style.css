@@ -389,8 +389,12 @@ img {
 
 .status-badge {
   position: relative;
-  padding: 3px 6px;
-  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 5px;
+  border: 1px solid transparent;
+  /* Paint the opaque center above the border; no mask can cover the text. */
+  background:
+    linear-gradient(#1d2127, #1d2127) padding-box,
+    conic-gradient(from var(--badge-angle), #ff0f7f, #fdca00 22%, #ff398b 40%, #1f3fd6 62%, #1f3fd6 75%, #ff0f7f) border-box;
   border-radius: 2px;
   font-family: var(--mono);
   font-weight: 600;
@@ -398,6 +402,7 @@ img {
   line-height: 13px;
   color: var(--white);
   white-space: nowrap;
+  animation: badge-drift 4s linear infinite;
 }
 
 :lang(zh) .status-badge {
@@ -405,29 +410,15 @@ img {
   letter-spacing: 0.06em;
 }
 
-.status-badge::before,
+/* a soft glow that breathes behind the opaque badge */
 .status-badge::after {
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: conic-gradient(from var(--badge-angle), #ff0f7f, #fdca00 22%, #ff398b 40%, #1f3fd6 62%, #1f3fd6 75%, #ff0f7f);
-  animation: badge-drift 4s linear infinite;
-  pointer-events: none;
-}
-
-/* the stroke: only a 1px ring of the gradient shows */
-.status-badge::before {
-  padding: 1px;
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
-}
-
-/* a soft glow that breathes behind it */
-.status-badge::after {
   z-index: -1;
   inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--badge-angle), #ff0f7f, #fdca00 22%, #ff398b 40%, #1f3fd6 62%, #1f3fd6 75%, #ff0f7f);
+  pointer-events: none;
   filter: blur(6px);
   opacity: 0.35;
   animation: badge-drift 4s linear infinite, badge-glow 2s ease-in-out infinite alternate;
@@ -458,15 +449,6 @@ img {
   font-size: 15px;
   line-height: 1.45;
   color: #ffffff;
-  background-image: linear-gradient(#ffffff, #ffffff);
-  background-size: 0% 1px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size 0.5s var(--ease);
-}
-
-.profile__email:hover {
-  background-size: 100% 1px;
 }
 
 .profile__row {
@@ -1059,6 +1041,9 @@ a.card:hover .card__title {
   font-size: 15px;
   line-height: 1.55;
   color: var(--ink-2);
+}
+
+a.footer__link {
   background-image: linear-gradient(var(--blue), var(--blue));
   background-size: 0% 1px;
   background-position: 0 100%;
@@ -1066,7 +1051,7 @@ a.card:hover .card__title {
   transition: color 0.3s ease, background-size 0.5s var(--ease);
 }
 
-.footer__link:hover {
+a.footer__link:hover {
   color: var(--blue);
   background-size: 100% 1px;
 }
