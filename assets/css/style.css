@@ -796,13 +796,22 @@ img {
   min-height: 0;
 }
 
+.cards:not(.cards--stack) {
+  --card-label-width: 110px;
+}
+
+.cards:not(.cards--stack):lang(zh) {
+  --card-label-width: 24px;
+}
+
 .cards:not(.cards--stack) .card__body,
 .cards:not(.cards--stack) .card__details {
   gap: 20px;
 }
 
 /* Lift with `translate`, not `transform`: the scroll reveal owns `transform` */
-a.card:hover {
+.card:hover,
+.card--private:focus-visible {
   translate: 0 -4px;
   border-color: rgba(0, 0, 0, 0.12);
   box-shadow: 0 16px 40px rgba(17, 21, 28, 0.08);
@@ -834,7 +843,8 @@ a.card:hover {
   transition: opacity 0.3s ease, transform 0.45s var(--ease);
 }
 
-a.card:hover .card__num svg {
+.card:hover .card__num svg,
+.card--private:focus-visible .card__num svg {
   opacity: 1;
   transform: translate(0, 0);
 }
@@ -860,7 +870,8 @@ a.card:hover .card__num svg {
   transition: transform 1s var(--ease);
 }
 
-a.card:hover .card__media img {
+.card:hover .card__media img,
+.card--private:focus-visible .card__media img {
   transform: scale(1.04);
 }
 
@@ -878,7 +889,8 @@ a.card:hover .card__media img {
   transition: color 0.3s ease;
 }
 
-a.card:hover .card__title {
+.card:hover .card__title,
+.card--private:focus-visible .card__title {
   color: var(--blue);
 }
 
@@ -894,7 +906,7 @@ a.card:hover .card__title {
 }
 
 .card__detail .label {
-  flex: 0 0 120px;
+  flex: 0 0 var(--card-label-width, 120px);
 }
 
 .card__detail .label {
@@ -912,6 +924,33 @@ a.card:hover .card__title {
   color: var(--label);
   font-size: 9px;
   line-height: 1.5;
+}
+
+.card--private {
+  cursor: pointer;
+}
+
+.card--private .card__media img {
+  object-fit: contain;
+}
+
+/* Reserve the notice's space so revealing it does not move neighboring cards. */
+.card--private .card__notice {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.card--private:is(:hover, :focus-visible) .card__notice {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (hover: none) {
+  .card--private .card__notice {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 /* --------------------------------------------------------------------------
