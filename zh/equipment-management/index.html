@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>医院放射科设备数据管理 — 李林溪</title>
+  <meta name="description" content="飞利浦医院放射科设备管理 UX 案例。从两家医院试点到 10 家以上医院装机部署。">
+  <meta property="og:title" content="医院放射科设备数据管理 — 李林溪">
+  <meta property="og:description" content="飞利浦医院放射科设备管理 UX 案例。从两家医院试点到 10 家以上医院装机部署。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:url" content="https://hellolinxi.com/zh/equipment-management/">
+  <meta property="og:site_name" content="Linxi Li">
+  <meta property="og:image" content="https://hellolinxi.com/assets/img/card-philips-radiology.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://hellolinxi.com/zh/equipment-management/">
+  <link rel="alternate" hreflang="en" href="https://hellolinxi.com/equipment-management/">
+  <link rel="alternate" hreflang="zh-CN" href="https://hellolinxi.com/zh/equipment-management/">
+  <link rel="alternate" hreflang="x-default" href="https://hellolinxi.com/equipment-management/">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@300;400;500;600&amp;family=Noto+Sans+SC:wght@300;400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/case.css">
+  <link rel="stylesheet" href="../../assets/css/equipment.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="cs equipment-case">
+  <header class="site-header" id="top">
+    <div class="page">
+      <div class="site-header__inner">
+        <a class="logo" href="../" aria-label="李林溪">
+          <span class="logo__mark">L</span>
+          <span class="logo__text">Linxi / 专注复杂系统设计</span>
+        </a>
+        <nav class="nav" aria-label="主导航">
+          <a class="nav__link" href="../#featured">[01] 重点项目</a>
+          <a class="nav__link is-active" href="../#work">[02] 精选项目</a>
+          <a class="nav__link" href="../#approach">[03] 工作方式</a>
+          <a class="nav__link" href="../../assets/resume/李林溪_简历.pdf" download="李林溪_简历.pdf">[04] 简历</a>
+        </nav>
+      </div>
+    </div>
+    <div class="cs-progress" aria-hidden="true"><span></span></div>
+  </header>
+
+  <main class="page">
+    <section class="cs-hero" aria-labelledby="cs-title">
+      <p class="cs-hero__eyebrow">飞利浦 · 医疗产品 UX · 数据密集型产品</p>
+      <h1 class="cs-hero__title" id="cs-title">医院放射科设备数据管理</h1>
+      <p class="eq-status"><strong>案例整理中</strong> <time datetime="2026-11-20">更新于 2026 年 11 月 20 日</time></p>
+      <div class="cs-hero__copy">
+        <p>放射科主任需要了解科室内各类高价值设备的运行情况。在飞利浦，我参与设计科室管理端和数据展示大屏，把设备状态和使用数据集中呈现，帮助主任快速了解科室运营情况。</p>
+        <p>我在两家医院的试点阶段参与了六个月的用户研究与 UI/UX 设计。在业务团队的支持下，我参与前期需求讨论、迭代界面、协助开展现场设计评审，并为现场工程师设计装机工具界面。</p>
+      </div>
+      <dl class="cs-meta">
+        <div><dt>我的角色</dt><dd>UI/UX 设计与用户研究</dd></div>
+        <div><dt>项目范围</dt><dd>科室管理端、数据展示大屏和装机工具</dd></div>
+        <div><dt>协作方</dt><dd>产品、开发、销售和试点医院相关团队</dd></div>
+        <div><dt>设计团队</dt><dd>一位 UI/UX 设计师及项目支持</dd></div>
+        <div><dt>参与周期</dt><dd>六个月，覆盖两家试点医院</dd></div>
+      </dl>
+    </section>
+
+    <section class="cs-section" id="background" aria-labelledby="background-title">
+      <div class="cs-head">
+        <h2 class="cs-title" id="background-title">放射检查流程中有哪些可用数据</h2>
+        <p class="cs-meta-label">项目背景</p>
+      </div>
+      <img class="eq-workflow" src="../../assets/img/equipment/workflow-strip.webp" width="1312" height="216" loading="lazy" decoding="async" alt="医院放射检查流程中的四个场景，包括登记、扫描、阅片与领取报告。">
+      <ol class="eq-steps">
+        <li>放射预约</li>
+        <li>挂号缴费</li>
+        <li>登记排队</li>
+        <li>到达检查室</li>
+        <li>完成检查</li>
+        <li>撰写报告</li>
+        <li>初次报告</li>
+        <li>二次审核</li>
+        <li>领取报告</li>
+      </ol>
+      <p class="cs-lead">预约和排队数据分散在医院不同的系统中。项目能从放射信息系统（RIS）获取检查完成量和报告量等汇总数据，但缺少各环节的排队人数和等待时长。现场人员也会疏导患者，因此，现有数据更适合用来了解设备使用情况，难以据此判断患者在哪个环节滞留。</p>
+    </section>
+
+    <section class="cs-section" id="drivers" aria-labelledby="drivers-title">
+      <div class="cs-head">
+        <h2 class="cs-title" id="drivers-title">为什么聚焦设备管理</h2>
+        <p class="cs-meta-label">项目推力</p>
+      </div>
+      <div class="eq-drivers">
+        <article><h3>医院管理逐步走向数字化</h3><p>2021 年 3 月，国家卫生健康委印发《医院智慧管理分级评估标准体系（试行）》，推动医院管理走向精细化和智能化。</p><p><a href="https://www.nhc.gov.cn/wjw/c100175/202103/981ae0011a0a4c498c0d81acd430c8d5.shtml">查看国家卫生健康委通知</a></p></article>
+        <article><h3>放射科主任需要了解高价值设备的运行情况</h3><p>一线同事的反馈帮助我们缩小了设计范围，聚焦设备管理。科主任还要兼顾人员管理、医疗安全、教学和科研。</p></article>
+      </div>
+    </section>
+
+    <section class="cs-section" id="team" aria-labelledby="team-title">
+      <div class="cs-head">
+        <h2 class="cs-title" id="team-title">业务、设计和开发如何协作</h2>
+        <p class="cs-meta-label">分工合作</p>
+      </div>
+      <div class="eq-team-wrap" role="region" aria-labelledby="team-title" tabindex="0">
+        <table class="eq-team">
+          <thead>
+            <tr><th scope="col">团队</th><th scope="col">明确范围</th><th scope="col">设计与数据准备</th><th scope="col">开发与评审</th><th scope="col">部署与推广</th></tr>
+          </thead>
+          <tbody>
+          <tr><th scope="row">业务团队</th><td>联系合作医院</td><td>协助与医院团队沟通</td><td>协调医院现场设计评审</td><td class="eq-lead"><strong>整理总结并推广</strong></td></tr>
+          <tr><th scope="row">设计团队</th><td>讨论前期需求</td><td class="eq-lead"><strong>迭代 UI/UX 设计</strong></td><td>参与现场设计评审</td><td>调整界面并设计部署工具</td></tr>
+          <tr><th scope="row">开发团队</th><td>参与方案讨论</td><td>准备后端数据环境</td><td class="eq-lead"><strong>开发方案</strong></td><td>现场安装和部署</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cs-section" id="design" aria-labelledby="design-title">
+      <div class="cs-head">
+        <h2 class="cs-title" id="design-title">设备总览、预警记录和系统状态</h2>
+        <p class="cs-meta-label">设计页面</p>
+      </div>
+      <div class="eq-screens">
+        <figure class="eq-screen">
+          <h3>关键设备数据总览</h3>
+          <button type="button" class="eq-screen__zoom" data-zoom aria-label="放大查看设计图 · 关键设备数据总览">
+            <img src="../../assets/img/equipment/dashboard-zh.webp" width="980" height="620" loading="lazy" decoding="async" alt="放射科设备管理总览设计，包含设备状态和检查量图表。">
+          </button>
+          <figcaption>总览页首先展示设备状态，并按设备类型、检查部位和设备呈现检查量。主任可据此确定需要进一步关注的设备或使用趋势。</figcaption>
+        </figure>
+        <figure class="eq-screen">
+          <h3>历史预警</h3>
+          <button type="button" class="eq-screen__zoom" data-zoom aria-label="放大查看设计图 · 历史预警">
+            <img src="../../assets/img/equipment/alert-zh.webp" width="980" height="620" loading="lazy" decoding="async" alt="预警记录的浅色和深色设计，展示日历、预警等级、通知与处理状态。">
+          </button>
+          <figcaption>通过日历和记录表，可以查看预警时间、紧急程度、通知记录与当前状态。深色与浅色主题使用相同的颜色标识紧急程度。</figcaption>
+        </figure>
+        <figure class="eq-screen">
+          <h3>服务器监控</h3>
+          <button type="button" class="eq-screen__zoom" data-zoom aria-label="放大查看设计图 · 服务器监控">
+            <img src="../../assets/img/equipment/servers-zh.webp" width="1092" height="850" loading="lazy" decoding="async" alt="服务器监控设计，包含正常、无响应和失联状态，以及状态卡片的细节。">
+          </button>
+          <figcaption>监控页按服务器汇总 CPU、内存、磁盘和网络指标，并区分正常、无响应和失联状态，便于技术团队排查系统问题。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cs-section" id="review" aria-labelledby="review-title">
+      <div class="cs-head">
+        <h2 class="cs-title" id="review-title">与医院团队一起评审设计</h2>
+        <p class="cs-meta-label">现场评审</p>
+      </div>
+      <p class="cs-lead">我们与放射科、设备管理和信息技术团队的代表在医院现场评审设计，讨论如何用更清楚的设备状态和使用数据支持日常管理。工作流程效率、放射剂量和人员安全是后续可以评估的方向。</p>
+    </section>
+
+    <section class="cs-section" id="rollout" aria-labelledby="rollout-title">
+      <div class="cs-head">
+        <h2 class="cs-title" id="rollout-title">从两家医院试点到平台化</h2>
+        <p class="cs-meta-label">部署与演进</p>
+      </div>
+      <p class="cs-lead">团队把试点和推广过程中现场工程师的操作步骤整理成可复用的装机工具。</p>
+      <ol class="eq-milestones">
+        <li><h3>两家医院试点</h3><p>关键设备数据总览、大屏展示、实时设备数据、预置报表下载和基础预警。</p></li>
+        <li><h3>10 家以上医院装机</h3><p>管理总览、数据查询、报表维护、大屏展示、服务器监控和预警。</p></li>
+        <li><h3>平台化发展</h3><p>整合不同系统的数据，扩展报表生成、数据查询、可视化和分析能力。</p></li>
+      </ol>
+    </section>
+
+    <nav class="cs-project-nav" aria-label="项目导航">
+      <a class="cs-project-nav__link" href="../#startup-challenge">
+        <span>下一个 · AI 模拟创业挑战游戏</span>
+        <img src="../../assets/img/project-next-zh.svg" width="9" height="14" alt="">
+      </a>
+    </nav>
+
+    <footer class="footer cs-footer" id="contact">
+      <div class="legal">
+        <p>© 2026 LINXI&nbsp;&nbsp;.✦ ˖</p>
+        <a class="lang-toggle" href="../../equipment-management/" hreflang="en" data-lang-switch aria-label="Switch to English" lang="en"><span>A</span><span class="is-on">中</span></a>
+        <a href="https://www.linkedin.com/in/lilinxi/" target="_blank" rel="noopener">LINKEDIN</a>
+        <p>中国 · 上海</p>
+      </div>
+    </footer>
+  </main>
+  <dialog class="cs-lightbox" aria-label="放大查看设计图">
+    <form method="dialog"><button class="cs-lightbox__close" aria-label="关闭">×</button></form>
+    <img alt="">
+  </dialog>
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/case.js"></script>
+</body>
+</html>

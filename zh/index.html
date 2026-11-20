@@ -252,14 +252,14 @@
           </div>
         </article>
 
-        <a class="card" role="button" tabindex="0" data-soon data-reveal style="--delay:.1s">
+        <a class="card" href="equipment-management/" aria-labelledby="equipment-management-title" data-reveal style="--delay:.1s">
           <div class="card__bar">
             <span class="card__num">项目 03 <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6" stroke="currentColor" stroke-width="1.4"/></svg></span>
             <span class="card__client">医疗健康 · Philips</span>
           </div>
           <div class="card__media"><img src="../assets/img/card-philips-radiology.jpg" alt="" width="1284" height="423" loading="lazy"></div>
           <div class="card__body">
-            <h3 class="card__title">放射科设备数据管理系统</h3>
+            <h3 class="card__title" id="equipment-management-title">放射科设备数据管理系统</h3>
             <div class="card__details">
               <div class="card__detail">
                 <p class="label">现状</p>
@@ -269,11 +269,15 @@
                 <p class="label">设计</p>
                 <p>交付放射科的设备数据管理系统设计，已在 10 余家医院部署落地。</p>
               </div>
+              <div class="card__detail">
+                <p class="label">案例</p>
+                <p>更新中</p>
+              </div>
             </div>
           </div>
         </a>
 
-        <a class="card" role="button" tabindex="0" data-soon data-reveal>
+        <a class="card" id="startup-challenge" role="button" tabindex="0" data-soon data-reveal>
           <div class="card__bar">
             <span class="card__num">项目 04 <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6" stroke="currentColor" stroke-width="1.4"/></svg></span>
             <span class="card__client">游戏化 AI · 晨晖创投</span>
@@ -464,7 +468,7 @@
 
   </main>
 
-  <!-- Case studies aren't online yet: their links show this toast instead -->
+  <!-- Toast for unpublished case studies -->
   <div class="toast" role="status" aria-live="polite">
     <div class="toast__inner">
       <p class="toast__title">敬请期待。</p>

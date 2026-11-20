@@ -272,14 +272,14 @@
           </div>
         </article>
 
-        <a class="card" role="button" tabindex="0" data-soon data-reveal style="--delay:.1s">
+        <a class="card" href="equipment-management/" aria-labelledby="equipment-management-title" data-reveal style="--delay:.1s">
           <div class="card__bar">
             <span class="card__num">PROJECT 03 <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6" stroke="currentColor" stroke-width="1.4"/></svg></span>
             <span class="card__client">Healthcare · Philips</span>
           </div>
           <div class="card__media"><img src="assets/img/card-philips-radiology.jpg" alt="" width="1284" height="423" loading="lazy"></div>
           <div class="card__body">
-            <h3 class="card__title">Equipment Data Management System for Radiology Department</h3>
+            <h3 class="card__title" id="equipment-management-title">Equipment Data Management System for Radiology Department</h3>
             <div class="card__details">
               <div class="card__detail">
                 <p class="label">The status quo</p>
@@ -289,11 +289,15 @@
                 <p class="label">The design</p>
                 <p>Delivered a radiology department equipment data management system design that has been deployed in more than 10 hospitals.</p>
               </div>
+              <div class="card__detail">
+                <p class="label">Case study</p>
+                <p>In progress</p>
+              </div>
             </div>
           </div>
         </a>
 
-        <a class="card" role="button" tabindex="0" data-soon data-reveal>
+        <a class="card" id="startup-challenge" role="button" tabindex="0" data-soon data-reveal>
           <div class="card__bar">
             <span class="card__num">PROJECT 04 <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6" stroke="currentColor" stroke-width="1.4"/></svg></span>
             <span class="card__client">Gamify AI · Chenhui Venture Partners</span>
@@ -484,7 +488,7 @@
 
   </main>
 
-  <!-- Case studies aren't online yet: their links show this toast instead -->
+  <!-- Toast for unpublished case studies -->
   <div class="toast" role="status" aria-live="polite">
     <div class="toast__inner">
       <p class="toast__title">Coming soon.</p>
