@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equipment Management in Hospital Radiology — Linxi Li</title>
+  <meta name="description" content="A Philips hospital radiology UX case study, from two equipment management pilots to deployment at 10+ hospitals.">
+  <meta property="og:title" content="Equipment Management in Hospital Radiology — Linxi Li">
+  <meta property="og:description" content="A Philips hospital radiology UX case study, from two equipment management pilots to deployment at 10+ hospitals.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:url" content="https://hellolinxi.com/equipment-management/">
+  <meta property="og:site_name" content="Linxi Li">
+  <meta property="og:image" content="https://hellolinxi.com/assets/img/card-philips-radiology.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://hellolinxi.com/equipment-management/">
+  <link rel="alternate" hreflang="en" href="https://hellolinxi.com/equipment-management/">
+  <link rel="alternate" hreflang="zh-CN" href="https://hellolinxi.com/zh/equipment-management/">
+  <link rel="alternate" hreflang="x-default" href="https://hellolinxi.com/equipment-management/">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/case.css">
+  <link rel="stylesheet" href="../assets/css/equipment.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="cs equipment-case">
+  <header class="site-header" id="top">
+    <div class="page">
+      <div class="site-header__inner">
+        <a class="logo" href="../" aria-label="Linxi Li">
+          <span class="logo__mark">L</span>
+          <span class="logo__text">Linxi / expertise in complex systems design</span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a class="nav__link" href="../#featured">[01] Featured</a>
+          <a class="nav__link is-active" href="../#work">[02] Selected Work</a>
+          <a class="nav__link" href="../#approach">[03] How I Work</a>
+          <a class="nav__link" href="../assets/resume/LinxiLi_Resume.pdf" download="LinxiLi_Resume.pdf">[04] Resume</a>
+        </nav>
+      </div>
+    </div>
+    <div class="cs-progress" aria-hidden="true"><span></span></div>
+  </header>
+
+  <main class="page">
+    <section class="cs-hero" aria-labelledby="cs-title">
+      <p class="cs-hero__eyebrow">Philips · Healthcare UX · Data-intensive products</p>
+      <h1 class="cs-hero__title" id="cs-title">Equipment Management in Hospital Radiology</h1>
+      <p class="eq-status"><strong>Case study in progress</strong> <time datetime="2026-11-20">Updated November 20, 2026</time></p>
+      <div class="cs-hero__copy">
+        <p>Radiology directors oversee high-value equipment across a department. At Philips, I worked on a web console and large-screen display that brought equipment status and use together so directors could review department operations at a glance.</p>
+        <p>I spent six months on UI/UX design and user research across two hospital pilots. With support from the business team, I contributed to early requirements discussions, iterated the interface, supported on-site design reviews, and designed the interface for the site engineers’ installation tool.</p>
+      </div>
+      <dl class="cs-meta">
+        <div><dt>My role</dt><dd>UI/UX design and user research</dd></div>
+        <div><dt>Scope</dt><dd>Web console, large-screen display, and installation tool</dd></div>
+        <div><dt>Partners</dt><dd>Product, engineering, sales, and hospital stakeholders</dd></div>
+        <div><dt>Design team</dt><dd>One UI/UX designer with project support</dd></div>
+        <div><dt>My involvement</dt><dd>Six months across two hospital pilots</dd></div>
+      </dl>
+    </section>
+
+    <section class="cs-section" id="background" aria-labelledby="background-title">
+      <div class="cs-head">
+        <h2 class="cs-title" id="background-title">What the radiology workflow could tell us</h2>
+        <p class="cs-meta-label">Project background</p>
+      </div>
+      <img class="eq-workflow" src="../assets/img/equipment/workflow-strip.webp" width="1312" height="216" loading="lazy" decoding="async" alt="Four scenes from a radiology exam workflow, from check-in and scanning to report review and collection.">
+      <ol class="eq-steps">
+        <li>Book exam</li>
+        <li>Register and pay</li>
+        <li>Check in and queue</li>
+        <li>Arrive at exam room</li>
+        <li>Complete exam</li>
+        <li>Draft report</li>
+        <li>Initial report</li>
+        <li>Second review</li>
+        <li>Collect report</li>
+      </ol>
+      <p class="cs-lead">Scheduling and queue data lived in separate hospital systems. The radiology information system (RIS) provided aggregate counts, including exam completions and reporting counts. It lacked the queue length and waiting time at each step. Since on-site staff also help manage patient flow, the available data supported a clearer view of equipment activity than of patient delays.</p>
+    </section>
+
+    <section class="cs-section" id="drivers" aria-labelledby="drivers-title">
+      <div class="cs-head">
+        <h2 class="cs-title" id="drivers-title">Why we focused on equipment management</h2>
+        <p class="cs-meta-label">Project drivers</p>
+      </div>
+      <div class="eq-drivers">
+        <article><h3>Hospital management was moving toward digital tools</h3><p>In March 2021, China’s National Health Commission published trial standards for evaluating digital hospital management.</p><p><a href="https://www.nhc.gov.cn/wjw/c100175/202103/981ae0011a0a4c498c0d81acd430c8d5.shtml">Read the National Health Commission notice</a></p></article>
+        <article><h3>Directors needed visibility into high-value equipment</h3><p>Frontline feedback helped narrow the scope to equipment management, one of several responsibilities radiology directors balance alongside staffing, clinical safety, teaching, and research.</p></article>
+      </div>
+    </section>
+
+    <section class="cs-section" id="team" aria-labelledby="team-title">
+      <div class="cs-head">
+        <h2 class="cs-title" id="team-title">How business, design, and engineering worked together</h2>
+        <p class="cs-meta-label">Team roles</p>
+      </div>
+      <div class="eq-team-wrap" role="region" aria-labelledby="team-title" tabindex="0">
+        <table class="eq-team">
+          <thead>
+            <tr><th scope="col">Team</th><th scope="col">Define the scope</th><th scope="col">Design and prepare data</th><th scope="col">Build and review</th><th scope="col">Deploy and expand</th></tr>
+          </thead>
+          <tbody>
+          <tr><th scope="row">Business</th><td>Contact partner hospitals</td><td>Liaise with hospital teams</td><td>Coordinate on-site design review</td><td class="eq-lead"><strong>Share findings and expand rollout</strong></td></tr>
+          <tr><th scope="row">Design</th><td>Discuss initial requirements</td><td class="eq-lead"><strong>Iterate on the UI/UX</strong></td><td>Support on-site design review</td><td>Refine the UI and design the deployment tool</td></tr>
+          <tr><th scope="row">Engineering</th><td>Review proposed solutions</td><td>Set up the backend data environment</td><td class="eq-lead"><strong>Build the solution</strong></td><td>Install and deploy on site</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cs-section" id="design" aria-labelledby="design-title">
+      <div class="cs-head">
+        <h2 class="cs-title" id="design-title">Equipment status, alert history, and system health</h2>
+        <p class="cs-meta-label">Design screens</p>
+      </div>
+      <div class="eq-screens">
+        <figure class="eq-screen">
+          <h3>Equipment overview</h3>
+          <button type="button" class="eq-screen__zoom" data-zoom aria-label="Enlarge design screenshot · Equipment overview">
+            <img src="../assets/img/equipment/dashboard-en.webp" width="980" height="620" loading="lazy" decoding="async" alt="Radiology dashboard design with device status and charts of exam activity.">
+          </button>
+          <figcaption>The overview puts device status first, alongside exam counts by modality, body region, and device. Directors can use these views to identify a device or activity trend to investigate.</figcaption>
+        </figure>
+        <figure class="eq-screen">
+          <h3>Alert history</h3>
+          <button type="button" class="eq-screen__zoom" data-zoom aria-label="Enlarge design screenshot · Alert history">
+            <img src="../assets/img/equipment/alert-en.webp" width="980" height="620" loading="lazy" decoding="async" alt="Alert history design comparing light and dark themes, with a calendar, severity, notifications, and resolution status.">
+          </button>
+          <figcaption>The calendar and history table surface when an alert fired, its severity, which notifications were sent, and its current status. The light and dark themes use the same colors for severity.</figcaption>
+        </figure>
+        <figure class="eq-screen">
+          <h3>Server monitoring</h3>
+          <button type="button" class="eq-screen__zoom" data-zoom aria-label="Enlarge design screenshot · Server monitoring">
+            <img src="../assets/img/equipment/servers-en.webp" width="1092" height="850" loading="lazy" decoding="async" alt="Server monitoring design with normal, frozen, and offline states and close-ups of the status cards.">
+          </button>
+          <figcaption>The monitoring view groups CPU, memory, disk, and network metrics by server and distinguishes normal, frozen, and offline states. This gives technical teams a place to start investigating a system issue.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cs-section" id="review" aria-labelledby="review-title">
+      <div class="cs-head">
+        <h2 class="cs-title" id="review-title">Reviewing the design with hospital teams</h2>
+        <p class="cs-meta-label">On-site review</p>
+      </div>
+      <p class="cs-lead">We reviewed the design on site with representatives from radiology, equipment services, and IT. Discussions covered how a clearer view of equipment and activity might support department management. Workflow efficiency, radiation dose, and staff safety were topics for further evaluation.</p>
+    </section>
+
+    <section class="cs-section" id="rollout" aria-labelledby="rollout-title">
+      <div class="cs-head">
+        <h2 class="cs-title" id="rollout-title">From two hospital pilots to a platform</h2>
+        <p class="cs-meta-label">Rollout</p>
+      </div>
+      <p class="cs-lead">The team used the steps site engineers followed during the pilots and rollout to design a reusable installation tool.</p>
+      <ol class="eq-milestones">
+        <li><h3>Pilot at two hospitals</h3><p>Key equipment metrics, a large-screen display, live equipment data, preset report downloads, and basic alerts.</p></li>
+        <li><h3>Installation at 10+ hospitals</h3><p>Dashboard, data queries, report maintenance, large-screen display, server monitoring, and alerts.</p></li>
+        <li><h3>Platform development</h3><p>Cross-system data integration and expanded tools for creating reports, querying, visualizing, and analyzing data.</p></li>
+      </ol>
+    </section>
+
+    <nav class="cs-project-nav" aria-label="Project navigation">
+      <a class="cs-project-nav__link" href="../#startup-challenge">
+        <span>Next · Startup Challenge AI-Simulated Game</span>
+        <img src="../assets/img/project-next-en.svg" width="9" height="14" alt="">
+      </a>
+    </nav>
+
+    <footer class="footer cs-footer" id="contact">
+      <div class="legal">
+        <p>© 2026 LINXI&nbsp;&nbsp;.✦ ˖</p>
+        <a class="lang-toggle" href="../zh/equipment-management/" hreflang="zh-CN" data-lang-switch aria-label="切换到中文" lang="zh-CN"><span class="is-on">A</span><span>中</span></a>
+        <a href="https://www.linkedin.com/in/lilinxi/" target="_blank" rel="noopener">LINKEDIN</a>
+        <p>SHANGHAI, CN</p>
+      </div>
+    </footer>
+  </main>
+  <dialog class="cs-lightbox" aria-label="Enlarge design screenshot">
+    <form method="dialog"><button class="cs-lightbox__close" aria-label="Close">×</button></form>
+    <img alt="">
+  </dialog>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/case.js"></script>
+</body>
+</html>
