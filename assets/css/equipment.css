@@ -6,6 +6,14 @@
   gap: 40px;
 }
 
+.equipment-case:lang(zh) #rollout {
+  border-bottom: 0;
+}
+
+.equipment-case:lang(zh) .cs-project-nav + .cs-footer {
+  border-top: 0;
+}
+
 .equipment-case .cs-head:has(+ .cs-lead) {
   margin-bottom: -16px;
 }
