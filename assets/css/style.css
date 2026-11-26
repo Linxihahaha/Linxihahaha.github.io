@@ -810,8 +810,7 @@ img {
 }
 
 /* Lift with `translate`, not `transform`: the scroll reveal owns `transform` */
-.card:hover,
-.card--private:focus-visible {
+a.card:hover {
   translate: 0 -4px;
   border-color: rgba(0, 0, 0, 0.12);
   box-shadow: 0 16px 40px rgba(17, 21, 28, 0.08);
@@ -843,8 +842,7 @@ img {
   transition: opacity 0.3s ease, transform 0.45s var(--ease);
 }
 
-.card:hover .card__num svg,
-.card--private:focus-visible .card__num svg {
+a.card:hover .card__num svg {
   opacity: 1;
   transform: translate(0, 0);
 }
@@ -870,8 +868,7 @@ img {
   transition: transform 1s var(--ease);
 }
 
-.card:hover .card__media img,
-.card--private:focus-visible .card__media img {
+a.card:hover .card__media img {
   transform: scale(1.04);
 }
 
@@ -889,8 +886,7 @@ img {
   transition: color 0.3s ease;
 }
 
-.card:hover .card__title,
-.card--private:focus-visible .card__title {
+a.card:hover .card__title {
   color: var(--blue);
 }
 
@@ -926,31 +922,8 @@ img {
   line-height: 1.5;
 }
 
-.card--private {
-  cursor: pointer;
-}
-
 .card--private .card__media img {
   object-fit: contain;
-}
-
-/* Reserve the notice's space so revealing it does not move neighboring cards. */
-.card--private .card__notice {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
-}
-
-.card--private:is(:hover, :focus-visible) .card__notice {
-  opacity: 1;
-  visibility: visible;
-}
-
-@media (hover: none) {
-  .card--private .card__notice {
-    opacity: 1;
-    visibility: visible;
-  }
 }
 
 /* --------------------------------------------------------------------------
