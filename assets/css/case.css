@@ -10,6 +10,10 @@
   --cs-radius: 8px;
 }
 
+.cs .legal {
+  align-items: center;
+}
+
 /* Reading progress — a hairline under the sticky header */
 .cs-progress {
   position: absolute;
@@ -38,6 +42,13 @@
   gap: 22px;
   padding: var(--section-pad) 0;
   border-bottom: 1px solid var(--ink);
+}
+
+.cs-hero__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .cs-hero__eyebrow {

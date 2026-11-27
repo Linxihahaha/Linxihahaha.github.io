@@ -810,7 +810,8 @@ img {
 }
 
 /* Lift with `translate`, not `transform`: the scroll reveal owns `transform` */
-a.card:hover {
+a.card:hover,
+.card--private:is(:hover, :focus-visible) {
   translate: 0 -4px;
   border-color: rgba(0, 0, 0, 0.12);
   box-shadow: 0 16px 40px rgba(17, 21, 28, 0.08);
@@ -886,7 +887,8 @@ a.card:hover .card__media img {
   transition: color 0.3s ease;
 }
 
-a.card:hover .card__title {
+a.card:hover .card__title,
+.card--private:is(:hover, :focus-visible) .card__title {
   color: var(--blue);
 }
 
@@ -917,13 +919,32 @@ a.card:hover .card__title {
 }
 
 .card__notice {
-  color: var(--label);
+  color: var(--muted);
   font-size: 9px;
   line-height: 1.5;
 }
 
+.card--private {
+  cursor: default;
+}
+
+.card--private .card__media,
 .card--private .card__media img {
-  object-fit: contain;
+  height: auto;
+}
+
+@media (hover: hover) {
+  /* Keep the notice in the layout so showing it doesn't shift the cards. */
+  .card--private .card__notice {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  .card--private:is(:hover, :focus-visible) .card__notice {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1087,94 +1108,45 @@ a.footer__link:hover {
   color: var(--label);
 }
 
-.legal a:hover {
+.legal a:not(.lang-switch):hover {
   color: var(--blue);
 }
 
-/* --------------------------------------------------------------------------
-   Language switch — A / 中 toggle (Figma "LanguageSwitch")
-   -------------------------------------------------------------------------- */
+/* The 1px margin preserves the Figma component's 42 × 26 frame. */
+@font-face {
+  font-family: "Language Switch Noto";
+  src: url("../radiology-case-study/fonts/noto-sans-sc-switch.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+4E2D, U+6587;
+}
 
 .lang-switch {
   display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: var(--muted);
-  transition: color 0.3s ease;
-}
-
-.lang-switch:hover {
-  color: var(--blue);
-}
-
-.lang-toggle {
-  position: relative;
-  display: inline-flex;
-  flex-shrink: 0;
-  width: 32px;
-  height: 14px;
-  padding: 1px;
-  background: #e5e5e5;
-  border-radius: 1px;
-}
-
-/* the white pill marks the current language and slides over on switch */
-.lang-toggle::before {
-  content: "";
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  width: 15px;
-  height: 12px;
-  background: var(--white);
-  border-radius: 0.6px;
-  transition: transform 0.3s var(--ease);
-}
-
-.lang-toggle > span {
-  position: relative;
-  display: flex;
-  flex: 1;
+  flex: none;
+  align-self: center;
   align-items: center;
   justify-content: center;
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 9px;
-  line-height: 1;
+  width: 40px;
+  height: 24px;
+  margin: 1px;
+  border: 0.5px solid rgba(31, 63, 214, 0.3);
+  background: var(--white);
   color: var(--blue);
-  opacity: 0.4;
-  transition: opacity 0.3s ease;
+  font: 400 12px/1 var(--sans);
+  white-space: nowrap;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
 }
 
-.lang-toggle > span.is-on {
-  opacity: 1;
+.lang-switch:lang(zh) {
+  font-family: "Language Switch Noto", var(--sans);
 }
 
-:root:lang(zh) .lang-toggle::before {
-  transform: translateX(15px);
-}
-
-.lang-toggle.is-switching::before {
-  transform: translateX(15px);
-}
-
-:root:lang(zh) .lang-toggle.is-switching::before {
-  transform: none;
-}
-
-.lang-switch:hover .lang-toggle > span:not(.is-on),
-a.lang-toggle:hover > span:not(.is-on),
-.lang-toggle.is-switching > span {
-  opacity: 1;
-}
-
-.lang-toggle.is-switching > span.is-on {
-  opacity: 0.4;
-}
-
-.legal .lang-toggle {
-  align-self: center;
+.lang-switch:hover,
+.lang-switch:focus-visible {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: var(--white);
 }
 
 /* --------------------------------------------------------------------------

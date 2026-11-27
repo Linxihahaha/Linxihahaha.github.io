@@ -26,21 +26,12 @@
     });
   }
 
-  // Language switch: slide the toggle's pill over, then go to the other language
+  // Remember the choice before following the language link.
   document.querySelectorAll('[data-lang-switch]').forEach(function (link) {
     link.addEventListener('click', function (e) {
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
-      e.preventDefault();
-      // remember the choice so the browser-language redirect never overrides it
-      try { localStorage.setItem('lang', /^zh/i.test(link.getAttribute('hreflang')) ? 'zh' : 'en'); } catch (err) {}
-      var toggle = link.classList.contains('lang-toggle') ? link : link.querySelector('.lang-toggle');
-      if (toggle) toggle.classList.add('is-switching');
-      setTimeout(function () { location.href = link.href; }, reduce ? 0 : 320);
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0 || e.defaultPrevented) return;
+      try { localStorage.setItem('lang', /^zh/i.test(link.hreflang) ? 'zh' : 'en'); } catch (err) {}
     });
-  });
-  // Coming back via the browser's back button restores the page as it was left
-  window.addEventListener('pageshow', function () {
-    document.querySelectorAll('.lang-toggle.is-switching').forEach(function (t) { t.classList.remove('is-switching'); });
   });
 
   // Fig. 1 keeps its Figma proportions: scale the whole diagram to fit

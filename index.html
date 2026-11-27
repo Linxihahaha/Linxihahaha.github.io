@@ -45,10 +45,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=30eb5d8">
+  <link rel="stylesheet" href="assets/css/style.css?v=8e1fb5c">
   <script>
     document.documentElement.classList.add('js');
-    // First visit: open the language the browser asks for. A choice made with the A/中 toggle wins; crawlers stay put.
+    // First visit: use the browser language unless the visitor has already chosen one. Crawlers stay put.
     (function () {
       try {
         if (localStorage.getItem('lang') || /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)) return;
@@ -84,11 +84,7 @@
       <div class="hero__intro">
         <div class="hero__top" data-reveal>
           <p class="hero__eyebrow">PORTFOLIO 2026</p>
-          <a class="lang-switch" href="zh/" hreflang="zh-CN" data-lang-switch>
-            <span class="lang-switch__label">Switch Language</span>
-            <span class="lang-toggle" aria-hidden="true"><span class="is-on">A</span><span lang="zh-CN">中</span></span>
-            <span class="visually-hidden" lang="zh-CN">（切换到中文）</span>
-          </a>
+          <a class="lang-switch" data-lang-switch href="zh/" hreflang="zh-CN" lang="zh-CN" aria-label="中文 — 切换到简体中文">中文</a>
         </div>
         <h1 class="hero__title" data-reveal style="--delay:.08s">Complex systems, <strong>untangled</strong>.</h1>
         <p class="hero__lede" data-reveal style="--delay:.16s">I’m Linxi, a senior UX designer specializing in complex systems. I work where business, technology and human needs get tangled — turning messy problems in industry-benchmark supply chains, long-lifecycle medical systems and enterprise fintech into digital experiences that feel trustworthy and natural.</p>
@@ -250,7 +246,7 @@
       </div>
 
       <div class="cards">
-        <article class="card card--private" id="risk-control" aria-labelledby="risk-control-title" data-reveal>
+        <article class="card card--private" id="risk-control" tabindex="0" aria-labelledby="risk-control-title" aria-describedby="risk-control-notice" data-reveal>
           <div class="card__bar">
             <span class="card__num">PROJECT 02</span>
             <span class="card__client">Fintech · PayPal</span>
@@ -268,7 +264,7 @@
                 <p>I refined the portal’s existing UX/UI and co-designed a planetary visualization with the product owner and engineering team. The target product sits at the center, surrounded by similar products and their compliance strategies. Distance, size, and color indicate similarity to help product managers identify relevant risks and controls.</p>
               </div>
             </div>
-            <p class="card__notice">* To respect confidentiality and intellectual property, project screens and the full case study are not publicly available. Please get in touch to discuss my experience with complex business requirements, information architecture, and interaction design.</p>
+            <p class="card__notice" id="risk-control-notice">* To respect confidentiality and intellectual property, project screens and the full case study are not publicly available. Please get in touch to discuss my experience with complex business requirements, information architecture, and interaction design.</p>
           </div>
         </article>
 
@@ -476,7 +472,7 @@
       </div>
       <div class="legal">
         <p>© 2026 LINXI&nbsp;&nbsp;.✦ ˖</p>
-        <a class="lang-toggle" href="zh/" hreflang="zh-CN" data-lang-switch aria-label="切换到中文 (Switch to Chinese)" lang="zh-CN"><span class="is-on" lang="en">A</span><span>中</span></a>
+        <a class="lang-switch" data-lang-switch href="zh/" hreflang="zh-CN" lang="zh-CN" aria-label="中文 — 切换到简体中文">中文</a>
         <a href="https://www.linkedin.com/in/lilinxi/" target="_blank" rel="noopener">LINKEDIN</a>
         <p>SHANGHAI, CN</p>
       </div>
@@ -492,6 +488,6 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=241c183"></script>
 </body>
 </html>

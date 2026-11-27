@@ -25,10 +25,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=30eb5d8">
+  <link rel="stylesheet" href="../assets/css/style.css?v=8e1fb5c">
   <script>
     document.documentElement.classList.add('js');
-    // First visit: open the language the browser asks for. A choice made with the A/中 toggle wins; crawlers stay put.
+    // First visit: use the browser language unless the visitor has already chosen one. Crawlers stay put.
     (function () {
       try {
         if (localStorage.getItem('lang') || /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)) return;
@@ -64,11 +64,7 @@
       <div class="hero__intro">
         <div class="hero__top" data-reveal>
           <p class="hero__eyebrow">作品集 2026</p>
-          <a class="lang-switch" href="../" hreflang="en" data-lang-switch>
-            <span class="lang-switch__label">切换语言</span>
-            <span class="lang-toggle" aria-hidden="true"><span lang="en">A</span><span class="is-on">中</span></span>
-            <span class="visually-hidden" lang="en">(Switch to English)</span>
-          </a>
+          <a class="lang-switch" data-lang-switch href="../" hreflang="en" lang="en" aria-label="EN — Switch to English">EN</a>
         </div>
         <h1 class="hero__title" data-reveal style="--delay:.08s">复杂系统，<br><strong>抽丝剥茧 逐步拆解。</strong></h1>
         <p class="hero__lede" data-reveal style="--delay:.16s">我是李林溪，一名专注复杂系统的高级用户体验设计师。我的工作常落在商业、技术与人的需求彼此交缠的地方——在行业标杆级的供应链、长生命周期的医疗系统和企业级金融科技中，把棘手而混乱的问题，转化为值得信赖、用起来自然的数字产品。</p>
@@ -230,7 +226,7 @@
       </div>
 
       <div class="cards">
-        <article class="card card--private" id="risk-control" aria-labelledby="risk-control-title" data-reveal>
+        <article class="card card--private" id="risk-control" tabindex="0" aria-labelledby="risk-control-title" aria-describedby="risk-control-notice" data-reveal>
           <div class="card__bar">
             <span class="card__num">项目 02</span>
             <span class="card__client">金融科技 · PayPal</span>
@@ -248,7 +244,7 @@
                 <p>我在既有版本的基础上优化 UI/UX，并与产品负责人及研发团队共同设计了以行星系统为比喻的可视化方案。目标产品位于中心，周围呈现相似产品及其合规策略，通过距离、大小和颜色表达相似程度，帮助产品经理识别相关风险与适用的控制措施。</p>
               </div>
             </div>
-            <p class="card__notice">* 出于保密与知识产权保护考虑，本项目的界面及完整案例暂不公开。如希望了解我在复杂业务梳理、信息架构与交互设计方面的经验，欢迎联系面谈。</p>
+            <p class="card__notice" id="risk-control-notice">* 出于保密与知识产权保护考虑，本项目的界面及完整案例暂不公开。如希望了解我在复杂业务梳理、信息架构与交互设计方面的经验，欢迎联系面谈。</p>
           </div>
         </article>
 
@@ -456,7 +452,7 @@
       </div>
       <div class="legal">
         <p>© 2026 LINXI&nbsp;&nbsp;.✦ ˖</p>
-        <a class="lang-toggle" href="../" hreflang="en" data-lang-switch aria-label="Switch to English（切换到英文）" lang="en"><span>A</span><span class="is-on" lang="zh-CN">中</span></a>
+        <a class="lang-switch" data-lang-switch href="../" hreflang="en" lang="en" aria-label="EN — Switch to English">EN</a>
         <a href="https://www.linkedin.com/in/lilinxi/" target="_blank" rel="noopener">LINKEDIN</a>
         <p>中国 · 上海</p>
       </div>
@@ -472,6 +468,6 @@
     </div>
   </div>
 
-  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/main.js?v=241c183"></script>
 </body>
 </html>
