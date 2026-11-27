@@ -1,0 +1,125 @@
+.equipment-case .cs-hero__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.equipment-case .cs-hero__copy {
+  padding-bottom: 32px;
+}
+
+.equipment-case .eq-graphic-section {
+  gap: 40px;
+}
+
+.equipment-case:lang(zh) #rollout {
+  border-bottom: 0;
+}
+
+.equipment-case:lang(zh) .cs-project-nav + .cs-footer {
+  border-top: 0;
+}
+
+.equipment-case .cs-head:has(+ .cs-lead) {
+  margin-bottom: -16px;
+}
+
+.equipment-case .cs-footer {
+  padding-top: var(--section-pad);
+}
+
+.eq-figure {
+  margin: 0;
+}
+
+.eq-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.eq-driver {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 190px;
+  padding: 28px;
+  border: 1px solid var(--hairline);
+  background: var(--white);
+  color: var(--ink-2);
+  font-size: .875rem;
+  line-height: 1.6;
+}
+
+.eq-drivers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.eq-driver__index {
+  margin-bottom: 4px;
+  color: var(--blue);
+  font: .75rem var(--mono);
+}
+
+.eq-driver h3 {
+  color: var(--ink);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.eq-emphasis-02 {
+  color: var(--blue);
+  text-decoration: underline wavy;
+  text-underline-offset: .22em;
+}
+
+.eq-drivers__marker {
+  display: block;
+  margin: 0 auto;
+}
+
+.eq-rollout__marker {
+  display: inline-block;
+  max-width: 2.3em;
+  height: auto;
+  margin-inline-start: .35em;
+  vertical-align: .06em;
+}
+
+.eq-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .equipment-case .eq-graphic-section {
+    gap: 24px;
+  }
+
+  .equipment-case .cs-head:has(+ .cs-lead) {
+    margin-bottom: -8px;
+  }
+
+  .eq-drivers {
+    grid-template-columns: 1fr;
+  }
+
+  .eq-driver {
+    min-height: 0;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .equipment-case .cs-hero__title {
+    font-size: clamp(30px, 9vw, 40px);
+  }
+}
